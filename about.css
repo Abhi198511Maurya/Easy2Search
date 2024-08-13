@@ -1,0 +1,134 @@
+
+/* About Section */
+.about-section {
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 2rem;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 2rem;
+    background-color: #eef2f7;
+    text-align: center;
+}
+
+.mission-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.mission-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Vision Section */
+.vision-section {
+    padding: 2rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.vision-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.vision-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    padding: 3rem 2rem;
+    background-color: #eef2f7;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.team-member {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 300px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 1.1rem;
+    color: #777;
+}
