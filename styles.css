@@ -19,23 +19,18 @@ body {
     font-family: "Nunito", sans-serif;
 }
 
-nav {
-    height: inherit;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 5;
     background-color: var(--navColor);
+    z-index: 5;
     position: sticky;
-    top: 0;
     box-shadow: 0 2px 10px gray;
 }
 
 .navbar-brand {
-    padding: 0.4rem 3rem;
+    padding: 0.3rem 3rem;
 }
 
 .navbar-brand a {
@@ -70,14 +65,41 @@ nav {
 .navbar-links a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+    transition: color 0.4s ease;
+    padding-bottom: 3px;
 }
 
-.navbar-links a:hover {
+/* Hover underline animation */
+.navbar-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.2rem; /* Thickness of the underline */
+    background-color: #ffdd57; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth width transition */
+    border-radius: 10px;
+}
+
+/* On hover, extend the underline */
+.navbar-links li a:hover::after {
+    width: 100%;
+}
+
+/* .navbar-links a:hover {
     color: #ffdd57;
+}
+.navbar-links a.active {
+    color: #ffdd57;
+} */
+.navbar-links a.active::after {
+    width: 100%;
 }
 
 /* Hero Section */

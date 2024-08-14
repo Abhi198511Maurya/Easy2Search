@@ -5,6 +5,25 @@ mobileMenu.addEventListener('click', () => {
     navbarLinks.classList.toggle('open');
 });
 
+// Get the current URL path
+const currentPath = window.location.pathname;
+
+// Select all the navigation links
+const navLinks = document.querySelectorAll('.navbar-links li a');
+
+// Loop through each link
+navLinks.forEach(link => {
+    // Extract the path from the link's href
+    const linkPath = new URL(link.href).pathname;
+
+    // Check if the link's path matches the current path
+    if (linkPath === currentPath) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
+});
+
 // Slideshow functionality with dynamic text and transitions
 
 let slideIndex = 0;
