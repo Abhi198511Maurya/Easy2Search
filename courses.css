@@ -45,31 +45,3 @@
     transform: translateY(-5px);
     box-shadow: 5px 5px 10px gray;
 }
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar-toggle {
-        display: flex;
-    }
-
-    .navbar-links {
-        position: absolute;
-        top: 60px; /* Adjust this value to match the height of the navbar */
-        left: 0;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-        flex-direction: column;
-        background-color: #0047ab;
-        transition: height 0.3s ease-in-out;
-    }
-
-    .navbar-links.open {
-        height: 200px;
-    }
-
-    .navbar-links li {
-        text-align: center;
-        margin: 1rem 0;
-    }
-}

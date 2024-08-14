@@ -1,8 +1,10 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navbarLinks = document.getElementById('navbar-links');
+const icon = mobileMenu.querySelector('#mobile-menu i');
 
 mobileMenu.addEventListener('click', () => {
     navbarLinks.classList.toggle('open');
+    icon.classList.toggle('fa-xmark');
 });
 
 // Get the current URL path
