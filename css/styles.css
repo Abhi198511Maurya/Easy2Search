@@ -102,7 +102,7 @@ body {
 .navbar-links a.active {
     color: #ffdd57;
 } */
-.navbar-links a.active::after {
+.navbar-links a.underline::after {
     width: 100%;
 }
 
@@ -196,119 +196,6 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* CSS for Recommended Resources */
-.recommended-resources {
-    padding: 3rem 1rem;
-    background-color: #f9f9f9;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.recommended-resources h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-.resource-filters {
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    padding: 0.75rem 1.75rem;
-    margin: 0 0.5rem;
-    background-color: #FF7F50;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.filter-btn.active {
-    background-color: #FF6347;
-    transform: scale(1.1);
-}
-
-.filter-btn:hover {
-    background-color: #FF6347;
-}
-
-.resource-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.resource-card {
-    width: 30%;
-    background: #fff;
-    padding: 1.5rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resource-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-}
-
-.resource-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.resource-card h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #444;
-}
-
-.resource-card p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-.visit-btn {
-    padding: 0.75rem 2rem;
-    background-color: #FF7F50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    display: inline-block;
-}
-
-.visit-btn:hover {
-    background-color: #FF6347;
-}
-
-@media (max-width: 1024px) {
-    .resource-card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .resource-card {
-        width: 100%;
-    }
-
-    .filter-btn {
-        margin: 0.5rem 0;
-        padding: 0.5rem 1.5rem;
-    }
-}
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
@@ -325,6 +212,7 @@ body {
         margin-bottom: 10px;
     }
 }
+
 
 /* Footer */
 footer {

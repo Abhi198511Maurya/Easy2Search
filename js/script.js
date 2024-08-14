@@ -20,9 +20,9 @@ navLinks.forEach(link => {
 
     // Check if the link's path matches the current path
     if (linkPath === currentPath) {
-        link.classList.add('active');
+        link.classList.add('underline');
     } else {
-        link.classList.remove('active');
+        link.classList.remove('underline');
     }
 });
 
@@ -90,57 +90,3 @@ setInterval(() => {
     plusSlides(1);
 }, 7000);
 
-// JavaScript for contact form validation and submission
-document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.getElementById('contact-form');
-    const formResponse = document.getElementById('form-response');
-
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Basic validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (name === '' || email === '' || subject === '' || message === '') {
-            formResponse.textContent = 'Please fill in all fields.';
-            formResponse.style.color = 'red';
-            return;
-        }
-
-        // Simulate form submission
-        setTimeout(() => {
-            formResponse.textContent = 'Thank you for your message! We will get back to you soon.';
-            formResponse.style.color = 'green';
-            contactForm.reset();
-        }, 1000);
-    });
-});
-
-// JavaScript for filtering resources
-document.addEventListener('DOMContentLoaded', function () {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const resourceCards = document.querySelectorAll('.resource-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            const category = this.getAttribute('data-category');
-
-            // Filter resources based on category
-            resourceCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
