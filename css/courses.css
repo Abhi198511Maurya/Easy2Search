@@ -16,7 +16,7 @@
 }
 
 .filter-btn {
-    padding: 0.75rem 1.75rem;
+    padding: 0.6rem 1.5rem;
     margin: 0 0.5rem;
     background-color: #8c98ea;
     color: #fff;
@@ -30,7 +30,7 @@
 
 .filter-btn.active {
     background-color: #6674cc;
-    transform: scale(1.1);
+    transform: scale(1.07);
 }
 
 .filter-btn:hover {
@@ -39,7 +39,7 @@
 
 .resource-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
@@ -47,7 +47,7 @@
 .resource-card {
     width: 17rem;
     background: #fff;
-    padding: 1.5rem;
+    padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: left;
@@ -56,14 +56,23 @@
 }
 
 .resource-card:hover {
-    transform: scale(1.07);
+    transform: translateY(-10px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.resource-card .image{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.resource-card:hover img{
+    transform: scale(1.1);
 }
 .resource-card img {
     width: 100%;
     height: 10rem;
     object-fit: fill;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .resource-card h4 {
@@ -73,18 +82,21 @@
 }
 
 .visit-btn {
-    padding: 0.75rem 2rem;
-    background-color: #FF7F50;
-    color: #fff;
+    color: #06bbcc;
     text-decoration: none;
-    border-radius: 25px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: color 0.3s ease;
     display: inline-block;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1rem;
+    
 }
 
 .visit-btn:hover {
-    background-color: #FF6347;
+    color: #0596a3;
 }
 
 @media (max-width: 1024px) {
