@@ -45,7 +45,7 @@
 }
 
 .resource-card {
-    width: 17rem;
+    width: 22%;
     background: #fff;
     padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -91,8 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 1rem;
-    
+    gap: 1rem;   
 }
 
 .visit-btn:hover {
@@ -101,7 +100,7 @@
 
 @media (max-width: 1024px) {
     .resource-card {
-        width: 45%;
+        width: 40%;
     }
 }
 

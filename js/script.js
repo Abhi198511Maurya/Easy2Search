@@ -90,3 +90,18 @@ setInterval(() => {
     plusSlides(1);
 }, 7000);
 
+document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+        const parent = item.parentNode;
+
+        // Toggle active class
+        parent.classList.toggle('active');
+
+        // Close other open FAQs
+        document.querySelectorAll('.faq-item').forEach(child => {
+            if (child !== parent) {
+                child.classList.remove('active');
+            }
+        });
+    });
+});

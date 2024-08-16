@@ -1,5 +1,10 @@
 
 /* About Section */
+main h1{
+    font-size: 3rem;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+}
 .about-section {
     padding: 3rem 2rem;
     background-color: #ffffff;
@@ -20,9 +25,10 @@
     margin-right: 2rem;
 }
 
-.about-text h1 {
-    font-size: 2.5rem;
+.about-text h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
+    color: #FF7F50;
 }
 
 .about-text p {
@@ -42,47 +48,47 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Mission Section */
-.mission-section {
+/* Section - 1 */
+.section-1 {
     padding: 2rem;
     background-color: #eef2f7;
-    text-align: center;
+    /* text-align: center; */
 }
 
-.mission-container {
-    max-width: 800px;
-    margin: 0 auto;
+.section-1-container {
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
 }
 
-.mission-section h2 {
+.section-1 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.mission-section p {
-    font-size: 1.2rem;
+.section-1 p {
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
 /* Vision Section */
-.vision-section {
+.section-2 {
     padding: 2rem;
     background-color: #ffffff;
-    text-align: center;
+    /* text-align: center; */
 }
 
-.vision-container {
-    max-width: 800px;
-    margin: 0 auto;
+.section-2-container {
+    /* max-width: 800px; */
+    /* margin: 0 ; */
 }
 
-.vision-section h2 {
+.section-2 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.vision-section p {
-    font-size: 1.2rem;
+.section-2 p {
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
