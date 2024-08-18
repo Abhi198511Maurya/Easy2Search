@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - E-Learn</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="index.html">Easy2Search</a>
-            </div>
-            <div class="navbar-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <ul class="navbar-links" id="navbar-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Resourses</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Loader Section -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">Easy2Search</a>
+        </div>
+        <div class="navbar-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Resourses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
 
     <main>
@@ -31,7 +39,8 @@
 
             <div class="contact-info">
                 <h2>Get In Touch</h2>
-                <p>I'm happy to help! If you're looking for contact information or details about E-Learn, you can reach out using the contact details below or the form on the right.</p>
+                <p>I'm happy to help! If you're looking for contact information or details about E-Learn, you can reach
+                    out using the contact details below or the form on the right.</p>
                 <div class="contact-details">
                     <div class="detail-item">
                         <span class="icon">📍</span>
@@ -68,11 +77,54 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 E-Learn. All rights reserved.</p>
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-row">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3>E-Learn</h3>
+                    <p>Your one-stop destination for discovering the best online courses and educational resources.
+                        Explore top platforms and start your learning journey today.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Links -->
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Newsletter Subscription -->
+                <div class="footer-col">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p id="newsletter-response"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Learn. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/contact.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

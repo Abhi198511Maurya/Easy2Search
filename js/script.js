@@ -1,3 +1,11 @@
+const loaderContainer = document.querySelector('.loader-container');
+
+document.addEventListener('onload', ()=>{
+    loaderContainer.style.display = "flex";
+});
+
+
+
 const mobileMenu = document.getElementById('mobile-menu');
 const navbarLinks = document.getElementById('navbar-links');
 const icon = mobileMenu.querySelector('#mobile-menu i');
@@ -76,7 +84,7 @@ function showSlides() {
             <h1>${slides[slideIndex].title}</h1>
             <p>${slides[slideIndex].description}</p>
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
+                <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
             </div>
         `;
 
@@ -105,3 +113,27 @@ document.querySelectorAll('.faq-question').forEach(item => {
         });
     });
 });
+
+
+// footer secition
+// Handle Newsletter Subscription
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('newsletter-email').value.trim();
+    const responseMessage = document.getElementById('newsletter-response');
+  
+    if (email === '') {
+      responseMessage.textContent = 'Please enter your email.';
+      responseMessage.style.color = 'red';
+      return;
+    }
+  
+    // Simulate subscription process
+    setTimeout(() => {
+      responseMessage.textContent = 'Thank you for subscribing!';
+      responseMessage.style.color = 'green';
+      document.getElementById('newsletter-form').reset();
+    }, 1000);
+  });
+  
