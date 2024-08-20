@@ -1,9 +1,3 @@
-const loaderContainer = document.querySelector('.loader-container');
-
-document.addEventListener('onload', ()=>{
-    loaderContainer.style.display = "flex";
-});
-
 
 
 const mobileMenu = document.getElementById('mobile-menu');

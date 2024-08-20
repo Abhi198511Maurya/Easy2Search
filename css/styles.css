@@ -3,13 +3,10 @@
 :root {
     --navColor: #6674cc;
     --text-color: #fff;
-    --bg-color: #FF7F50;
-    --text-sec: #666;
+    --bg-color: hwb(16 31% 0%);
+    --text-sec: #555;
 }
 
-main {
-    margin: auto 7%;
-}
 
 * {
     margin: 0;
@@ -20,47 +17,11 @@ main {
 body {
     font-family: "Nunito", sans-serif;
 }
-
-/* Loader Container */
-.loader-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+main {
+    margin: auto 7%;
 }
 
-/* Loader Design */
-.loader {
-    width: 50px;
-    height: 50px;
-    border: 6px solid #007bff;
-    border-top: 6px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* Loader Animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Responsive Loader */
-@media (max-width: 600px) {
-    .loader {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
-    }
-}
-
-
+/* navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -238,23 +199,6 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 50%;
-        margin-bottom: 10px;
-    }
-}
-
 .investment-section {
     text-align: center;
     padding: 50px 20px;
@@ -321,6 +265,106 @@ body {
     color: var(--text-color);
 }
 
+
+.why-choose-us {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #eef2f7;
+}
+
+.why-choose-us .text-center {
+    text-align: center;
+}
+
+.text-center .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.text-center .title .highlight {
+    color: var(--navColor);
+}
+
+.text-center .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.why-choose-us .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.why-choose-us .row .column {
+    flex: 1;
+    padding: 10px;
+}
+
+.why-choose-us .center-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-choose-us .center-image img {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    transition: transform 0.5s ease,box-shadow 0.5s ease;
+    box-shadow: 0 0 5px #777;
+}
+
+.why-choose-us .center-image:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #666;
+}
+
+.column .feature-item {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.column .feature-item:hover .feature-icon i {
+    transform: scale(1.3);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.feature-icon i {
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: var(--navColor);
+    transition: transform 0.5s ease;
+}
+
+.sub-info {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* frequentaly asked question */
 .faq-section {
     max-width: 800px;
     margin: 50px auto;
@@ -373,6 +417,7 @@ body {
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    color: #666;
 }
 
 .faq-item.active .faq-answer {
@@ -478,10 +523,10 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: var(--navColor);
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .newsletter-form button:hover {
@@ -526,5 +571,35 @@ body {
 
     .navbar-links li {
         text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .why-choose-us .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .why-choose-us .row .center-image {
+        margin: 20px 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .why-choose-us .row .center-image {
+        display: none;
     }
 }

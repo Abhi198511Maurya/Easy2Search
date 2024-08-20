@@ -63,6 +63,7 @@ main>h2 {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    outline: none;
 }
 
 .contact-button {

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - E-Learn</title>
+    <title>Blogs</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/blogs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,58 +23,26 @@
         <ul class="navbar-links" id="navbar-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="courses.html">Resourses</a></li>
-            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="#">Blogs</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-
     <main>
-        <h2>Contact Us</h2>
-        <section class="contact-container">
-
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                <p>I'm happy to help! If you're looking for contact information or details about E-Learn, you can reach
-                    out using the contact details below or the form on the right.</p>
-                <div class="contact-details">
-                    <div class="detail-item">
-                        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-                        <p><strong>Office</strong><br>123 Street, Bangalore, Karnataka</p>
-                    </div>
-                    <div class="detail-item">
-                        <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                        <p><strong>Mobile</strong><br>+91 8683045908</p>
-                    </div>
-                    <div class="detail-item">
-                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-                        <p><strong>Email</strong><br>secretcoder@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="contact-button">Send Message</button>
-                    <p id="form-response"></p>
-                </form>
-            </div>
-        </section>
+        
     </main>
 
-    <!-- Footer Section -->
+    <!-- Pagination Section -->
+    <div class="pagination">
+        <a href="#" class="prev">Previous</a>
+        <a href="#" class="page-number">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+        <a href="#" class="next">Next</a>
+    </div>
+
+
     <footer class="footer-section">
         <div class="footer-container">
             <div class="footer-row">
@@ -119,8 +87,6 @@
             <p>&copy; 2024 E-Learn. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="js/contact.js"></script>
     <script src="js/script.js"></script>
 </body>
 

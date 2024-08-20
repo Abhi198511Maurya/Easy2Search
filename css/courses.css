@@ -45,7 +45,7 @@
 }
 
 .resource-card {
-    width: 22%;
+    width: 18rem;
     background: #fff;
     padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) {
     .resource-card {
-        width: 100%;
+        width: 70%;
     }
 
     .filter-btn {
