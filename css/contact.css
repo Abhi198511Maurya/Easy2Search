@@ -5,19 +5,13 @@
 }
 
 /* Contact Section */
-main>h2 {
-    font-size: 3rem;
-    margin: 2rem 0 1rem 0;
-    text-align: center;
-}
-
 .contact-container {
     display: flex;
     /* text-align: center; */
     justify-content: space-between;
     padding: 2rem 1rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 5rem auto;
 }
 
 .contact-info {
@@ -64,6 +58,7 @@ main>h2 {
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
+    resize: vertical;
 }
 
 .contact-button {
