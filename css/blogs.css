@@ -1,5 +1,6 @@
 main{
-    margin: 60px auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 /*Blogs Container */
@@ -11,14 +12,14 @@ main{
 }
 
 /* Blog Wrapper */
-.blog-wrapper .row {
+.blog-container .blog-wrapper .row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 /* Single Blog */
-.single-blog {
+.blog-container .blog-wrapper .row .single-blog {
     background-color: white;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 20px;
@@ -30,56 +31,56 @@ main{
     transition: transform 0.3s ease,border 0.3s ease;
 }
 
-.single-blog:hover {
+.blog-container .blog-wrapper .row .single-blog:hover {
     transform: translateY(-5px);
     border-color: #6674cc;
 }
 
 /* Blog Image */
-.blog-image img {
+.blog-container .blog-wrapper .row .single-blog .blog-image img {
     width: 100%;
     height: 13rem;
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
 
-.single-blog:hover .blog-image img {
+.blog-container .blog-wrapper .row .single-blog:hover .blog-image img {
     transform: scale(1.05);
 }
 
 /* Blog Content */
-.blog-content {
+.blog-container .blog-wrapper .row .single-blog .blog-content {
     padding: 15px;
     flex-grow: 1;
 }
 
 /* Blog Author */
-.blog-author {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-author {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.author {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-author .author {
     display: flex;
     align-items: center;
 }
 
-.author-thumb img {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-author .author .author-thumb img {
     border-radius: 50%;
     width: 40px;
     height: 40px;
     margin-right: 10px;
 }
 
-.author-name .name {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-author .author .author-name .name {
     font-weight: bold;
     color: #333;
     text-decoration: none;
 }
 
-.tag a {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-author .tag a {
     background-color: #e2f1e2;
     padding: 5px 10px;
     border-radius: 20px;
@@ -89,23 +90,23 @@ main{
 }
 
 /* Blog Title */
-.title {
+.blog-container .blog-wrapper .row .single-blog .blog-content .title {
     margin-bottom: 15px;
 }
 
-.title a {
+.blog-container .blog-wrapper .row .single-blog .blog-content .title a {
     color: #333;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
 
-.title a:hover {
+.blog-container .blog-wrapper .row .single-blog .blog-content .title a:hover {
     color: #6674cc;
 }
 
 /* Blog Meta */
-.blog-meta {
+.blog-container .blog-wrapper .row .single-blog .blog-content .blog-meta {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -114,7 +115,7 @@ main{
 }
 
 /* Read More Button */
-.btn-read-more {
+.blog-container .blog-wrapper .row .single-blog .blog-content .btn-read-more {
     display: inline-block;
     padding: 10px 20px;
     background-color: #6674cc;
@@ -124,27 +125,27 @@ main{
     transition: background-color 0.3s ease;
 }
 
-.btn-read-more:hover {
+.blog-container .blog-wrapper .row .single-blog .blog-content .btn-read-more:hover {
     background-color: #4b59b7;
 }
 
 /* Pagination */
-.page-pagination {
+.blog-container .page-pagination {
     text-align: center;
     margin-top: 30px;
 }
 
-.page-pagination .pagination {
+.blog-container .page-pagination .pagination {
     list-style: none;
     display: inline-flex;
     gap: 10px;
 }
 
-.page-pagination .pagination li {
+.blog-container .page-pagination .pagination li {
     padding: 5px;
 }
 
-.page-pagination .pagination li a {
+.blog-container .page-pagination .pagination li a {
     display: block;
     padding: 10px;
     color: #333;
@@ -154,24 +155,24 @@ main{
     transition: background-color 0.3s ease;
 }
 
-.page-pagination .pagination li a.active {
+.blog-container .page-pagination .pagination li a.active {
     background-color: #6674cc;
     color: white;
 }
 
-.page-pagination .pagination li a:hover {
+.blog-container .page-pagination .pagination li a:hover {
     background-color: #6674cc;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .single-blog {
+    .blog-container .blog-wrapper .row .single-blog {
         width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
-    .single-blog {
+    .blog-container .blog-wrapper .row .single-blog {
         width: 100%;
     }
 }

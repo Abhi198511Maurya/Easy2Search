@@ -1,3 +1,13 @@
+window.addEventListener('scroll', function () {
+    var navbar = document.querySelector('.navbar');
+    if (window.scrollY > 150) { // Change 50 to your desired scroll distance
+        navbar.style.position = "fixed"
+        navbar.classList.add('scrolled');
+    }else {
+        navbar.style.position = "absolute"
+        navbar.classList.remove('scrolled');
+    }
+});
 
 
 const mobileMenu = document.getElementById('mobile-menu');
@@ -48,18 +58,21 @@ function showSlides() {
             title: 'Learn Job Ready Skills from Free Online Courses with Certificates',
             description: 'Explore a wide range of courses designed to enhance your expertise in technology, business, arts, and more. Start learning today!',
             ctaPrimary: 'Read More',
+            ctaSecondary: 'Sign up'
         },
         {
             image: './images/slide3.jpg',
             title: 'Master the Art of Web Development with Comprehensive Courses',
             description: 'Join our web development courses to build responsive, modern websites from scratch. Start your coding journey today!',
             ctaPrimary: 'Read More',
+            ctaSecondary: 'Sign up'
         },
         {
             image: './images/slide4.jpg',
             title: 'Get Certified in AWS and Boost Your Career',
             description: 'Enroll in our AWS certification courses and become a cloud computing expert. Enhance your resume with in-demand skills!',
             ctaPrimary: 'Read More',
+            ctaSecondary: 'Sign up'
         }
     ];
 
@@ -79,6 +92,7 @@ function showSlides() {
             <p>${slides[slideIndex].description}</p>
             <div class="cta-buttons">
                 <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
+                <a href="about.html" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
             </div>
         `;
 
@@ -111,23 +125,22 @@ document.querySelectorAll('.faq-question').forEach(item => {
 
 // footer secition
 // Handle Newsletter Subscription
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+document.getElementById('newsletter-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const email = document.getElementById('newsletter-email').value.trim();
     const responseMessage = document.getElementById('newsletter-response');
-  
+
     if (email === '') {
-      responseMessage.textContent = 'Please enter your email.';
-      responseMessage.style.color = 'red';
-      return;
+        responseMessage.textContent = 'Please enter your email.';
+        responseMessage.style.color = 'red';
+        return;
     }
-  
+
     // Simulate subscription process
     setTimeout(() => {
-      responseMessage.textContent = 'Thank you for subscribing!';
-      responseMessage.style.color = 'green';
-      document.getElementById('newsletter-form').reset();
+        responseMessage.textContent = 'Thank you for subscribing!';
+        responseMessage.style.color = 'green';
+        document.getElementById('newsletter-form').reset();
     }, 1000);
-  });
-  
+});

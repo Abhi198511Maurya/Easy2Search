@@ -14,44 +14,44 @@
     margin: 5rem auto;
 }
 
-.contact-info {
+.contact-container .contact-info {
     flex: 1;
     margin-right: 2rem;
 }
 
 
-.contact-info p {
+.contact-container .contact-info p {
     margin-bottom: 2rem;
     line-height: 1.6;
 }
 
-.contact-details .detail-item {
+.contact-container .contact-info .contact-details .detail-item {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
 }
 
-.contact-details .icon {
+.contact-container .contact-info .contact-details .icon {
     font-size: 2rem;
     margin-right: 1rem;
     color: var(--btn-bg); /* Coral color */
 }
 
-.contact-details p {
+.contact-container .contact-info .contact-details p {
     margin: 0;
     font-size: 1rem;
 }
 
-.contact-form {
+.contact-container .contact-form {
     flex: 1;
 }
 
-.form-group {
+.contact-container .contact-form #contact-form .form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-group input, 
-.form-group textarea {
+.contact-container .contact-form #contact-form .form-group input, 
+.contact-container .contact-form #contact-form .form-group textarea {
     width: 100%;
     padding: 1rem;
     border: 1px solid #ddd;
@@ -61,7 +61,7 @@
     resize: vertical;
 }
 
-.contact-button {
+.contact-container .contact-form #contact-form .contact-button {
     padding: 1rem;
     background: var(--btn-bg); /* Coral color */
     color: var(--text-color);
@@ -73,11 +73,11 @@
     transition: background 0.3s ease;
 }
 
-.contact-button:hover {
+.contact-container .contact-form #contact-form .contact-button:hover {
     background: #FF6347; /* Darker coral */
 }
 
-#form-response {
+.contact-container .contact-form #contact-form #form-response {
     margin-top: 1rem;
     font-size: 1rem;
     color: green;
@@ -88,12 +88,12 @@
         flex-direction: column;
     }
 
-    .contact-info {
+    .contact-container .contact-info {
         margin-right: 0;
         margin-bottom: 2rem;
     }
 
-    .contact-button {
+    .contact-container .contact-form #contact-form .contact-button {
         width: 100%;
     }
 }
