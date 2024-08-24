@@ -661,7 +661,7 @@ main {
 
 /* Main container for both course cards and sidebar */
 .stay-updated{
-    padding: 5rem 8rem;
+    margin: 5rem 5rem;
 }
 .stay-updated h1{
     text-align: center;
@@ -760,7 +760,15 @@ main {
 }
 
 /* Responsive Design */
+@media (max-width: 480px) {
+    .main-container .course-container .course-card img{
+        display: none;
+    }
+}
 @media (max-width: 900px) {
+    .stay-updated{
+        margin: 5rem 1rem;
+    }
     .main-container {
         flex-direction: column;
     }
