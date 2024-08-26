@@ -139,4 +139,7 @@
   .map h2 {
     font-size: 24px; /* Adjust font size for smaller screens */
   }
+  .map-wrapper{
+    width: 100%;
+  }
 }
