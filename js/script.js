@@ -14,9 +14,15 @@ const mobileMenu = document.getElementById('mobile-menu');
 const navbarLinks = document.getElementById('navbar-links');
 const icon = mobileMenu.querySelector('#mobile-menu i');
 
-mobileMenu.addEventListener('click', () => {
-    navbarLinks.classList.toggle('open');
-    icon.classList.toggle('fa-xmark');
+// CLICK EVENT ON OUTSIDE OF NAVLINKS
+document.addEventListener('click', (e) => {
+    if (mobileMenu.contains(e.target)) {
+        navbarLinks.classList.toggle('open');
+        icon.classList.toggle('fa-xmark');
+    } else if (!navbarLinks.contains(e.target)) {
+        icon.classList.remove('fa-xmark');
+        navbarLinks.classList.remove('open');
+    }
 });
 
 // Get the current URL path

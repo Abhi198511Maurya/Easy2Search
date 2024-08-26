@@ -221,7 +221,8 @@ main {
     font-size: 24px;
     transition: 0.6s ease;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid gray;
+    /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 10px;
 }
 
@@ -552,13 +553,14 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     /* Reduced card width */
-    transition: transform 0.3s ease,box-shadow 0.5s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.5s ease-in-out;
 }
 
 .popular-courses .course-cards .course-card .image {
     overflow: hidden;
 }
-.popular-courses .course-cards .course-card .image img{
+
+.popular-courses .course-cards .course-card .image img {
     width: 100%;
     height: 10rem;
     object-fit: fill;
@@ -615,7 +617,7 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.popular-courses .course-cards .course-card:hover .image img{
+.popular-courses .course-cards .course-card:hover .image img {
     transform: scale(1.1);
 }
 
@@ -660,14 +662,17 @@ main {
 }
 
 /* Main container for both course cards and sidebar */
-.stay-updated{
-    margin: 5rem 5rem;
+.stay-updated {
+    max-width: 1150px;
+    margin: 5rem auto;
 }
-.stay-updated h1{
+
+.stay-updated h1 {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2rem;
 }
+
 .main-container {
     display: flex;
     flex-wrap: wrap;
@@ -685,7 +690,8 @@ main {
 
 .main-container .course-container .course-card {
     background-color: white;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow: hidden;
@@ -693,9 +699,10 @@ main {
 
 .main-container .course-container .course-card img {
     width: 12rem;
-    /* height: 12rem; */
-    object-fit: cover;
-    border-radius: 10px 0 0 10px;
+    height: 12rem;
+    object-fit: fill;
+    margin: auto auto;
+    border-radius: 50%;
 }
 
 .main-container .course-container .course-card .course-content {
@@ -732,49 +739,44 @@ main {
 
 /* Right Side (Sidebar) */
 .main-container .sidebar-container {
-    /* flex: 1; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    gap: 20px;
+    position: relative;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/033/116/193/non_2x/global-tech-savvy-ceo-navigating-digital-marketing-across-international-landscapes-vertical-mobile-wallpaper-ai-generated-free-photo.jpg');
+    width: 20rem;
+    /* height: 40vh; */
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.main-container .sidebar-container .sidebar-card {
-    background-color: white;
-    /* border-radius: 10px; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.main-container .sidebar-container .sidebar-container-content {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    display: flex;
     padding: 20px;
-    margin-bottom: 20px;
-    align-items: baseline;
-}
-
-.main-container .sidebar-container .sidebar-card img {
-    width: 15rem;
-    height: 10rem;
-}
-
-.main-container .sidebar-container .sidebar-card h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    text-align: center;
-    color: #2c3e50;
+    align-items: end;
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
-    .main-container .course-container .course-card img{
+    .main-container .course-container .course-card img {
         display: none;
     }
 }
+
 @media (max-width: 900px) {
-    .stay-updated{
+    .stay-updated {
         margin: 5rem 1rem;
     }
+
     .main-container {
         flex-direction: column;
     }
 
-    .main-container .course-container,
-    .main-container .sidebar-container {
+    .main-container .course-container {
         width: 100%;
     }
 
@@ -782,11 +784,11 @@ main {
         width: 12rem;
         /* height: 120px; */
     }
-
-    .main-container .sidebar-container .sidebar-card img {
-        width: 100%;
+    .main-container .sidebar-container{
+        display: none;
     }
 }
+
 /* frequentaly asked question */
 .faq-section {
     max-width: 800px;
