@@ -1,8 +1,63 @@
+.courses-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.courses-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.courses-section .course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.courses-section .course-container a {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+    transition: all 0.3s ease, color 0.5s ease-in-out;
+}
+
+
+.courses-section .course-container a i {
+    font-size: 50px;
+    color: #20c997;
+    margin-bottom: 15px;
+    transition: color 0.5s ease-in-out;
+}
+.courses-section .course-container a:hover i{
+    color: #fff;
+}
+
+.courses-section .course-container a:hover {
+    transform: translateY(-10px);
+    background-color: #20c997;
+    color: #fff;
+}
+
+.courses-section .course-container a h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
 /* CSS for Recommended Resources */
 .recommended-resources {
     padding: 3rem 1rem;
     background-color: #f9f9f9;
     text-align: center;
+}
+
+.recommended-resources h2{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .recommended-resources .resource-filters {
@@ -54,13 +109,15 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-.recommended-resources .resource-cards .resource-card .image{
+.recommended-resources .resource-cards .resource-card .image {
     overflow: hidden;
     border-radius: 10px;
 }
-.recommended-resources .resource-cards .resource-card:hover img{
+
+.recommended-resources .resource-cards .resource-card:hover img {
     transform: scale(1.1);
 }
+
 .recommended-resources .resource-cards .resource-card img {
     width: 100%;
     height: 10rem;
@@ -85,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 1rem;   
+    gap: 1rem;
 }
 
 .recommended-resources .resource-cards .resource-card .visit-btn:hover {
