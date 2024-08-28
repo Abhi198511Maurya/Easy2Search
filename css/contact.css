@@ -1,7 +1,9 @@
 :root {
-    --navColor: #6674cc;
+    --blue: #6674cc;
     --text-color: #fff;
-    --btn-bg:#FF7F50;
+    --text-sec: #333;
+    --black: #000;
+    --gray: #eef2f771;
 }
 
 /* Contact Section */
@@ -34,7 +36,7 @@
 .contact-container .contact-info .contact-details .icon {
     font-size: 2rem;
     margin-right: 1rem;
-    color: var(--btn-bg); /* Coral color */
+    color: var(--blue); /* Coral color */
 }
 
 .contact-container .contact-info .contact-details p {
@@ -63,7 +65,7 @@
 
 .contact-container .contact-form #contact-form .contact-button {
     padding: 1rem;
-    background: var(--btn-bg); /* Coral color */
+    background: var(--blue); /* Coral color */
     color: var(--text-color);
     border: none;
     border-radius: 5px;
@@ -74,7 +76,7 @@
 }
 
 .contact-container .contact-form #contact-form .contact-button:hover {
-    background: #FF6347; /* Darker coral */
+    background: var(--blue); /* Darker coral */
 }
 
 .contact-container .contact-form #contact-form #form-response {
@@ -101,7 +103,7 @@
 .map {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f5f5f5; /* Light background color */
+  background-color: var(--gray); /* Light background color */
 }
 
 .map .container {
@@ -111,7 +113,7 @@
 
 .map h2 {
   font-size: 30px;
-  color: #333; /* Dark color for text */
+  color: var(--text-sec); /* Dark color for text */
   margin-bottom: 20px;
 }
 
@@ -122,7 +124,7 @@
   padding-bottom:40%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  border: 3px solid #6674cc;
+  border: 3px solid var(--blue);
   border-radius: 20px; /* Rounded corners for the map */
 }
 
