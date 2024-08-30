@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - E-Learning Website</title>
+    <title>Videos Page</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/courses.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/topicpage.css">
 </head>
 
 <body>
@@ -22,16 +19,17 @@
         </div>
         <ul class="navbar-links" id="navbar-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Resourses</a></li>
+            <li><a href="courses.html">Resourses</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <!-- <header> -->
     <div class="header-section-outer">
         <div class="header-section">
             <div class="header-section-content">
-                <h1>Resources</h1>
+                <h1>All Topics</h1>
                 <!-- content -->
             </div>
         </div>
@@ -39,51 +37,12 @@
 
     <main>
         <section class="courses-section">
-            <h2>Browse Our Online Resources</h2>
-            <div class="course-container">
-                <a href="#">
-                    <i class="fa-solid fa-palette"></i>
-                    <h3>UI/UX Design Course</h3>
-                </a>
-                <a href="#">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Art & Design</h3>
-                </a>
-                <a href="#">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Computer Science</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-rectangle-ad"></i>
-                    <h3>Marketing</h3>
-                </a>
-                <a href="#">
-                    <i class="fas fa-code"></i>
-                    <h3>Software Engineering</h3>
-                </a>
-                <!-- Add more courses as needed -->
-            </div>
-        </section>
+            <div class="card-grid">
+                <!-- HERE CARD WILL BE ADD -->
 
-        <section class="recommended-resources">
-            <h2>Course Category</h2>
-            <div class="resource-filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="computer-science"><i class="fa-solid fa-code"></i>
-                    Computer Science</button>
-                <button class="filter-btn" data-category="design"><i class="fas fa-pencil-ruler"></i> Design</button>
-                <button class="filter-btn" data-category="marketing"><i class="fas fa-ad"></i> Marketing</button>
-                <button class="filter-btn" data-category="business"><i class="fa-solid fa-business-time"></i> Business</button>
-                <button class="filter-btn" data-category="language"><i class="fas fa-language"></i> Language Learning</button>
-                <!-- Add more categories as needed -->
-            </div>
-            <div class="resource-cards">
-                
-                <!-- Add more resource cards as needed -->
             </div>
         </section>
     </main>
-
     <!-- Footer Section -->
     <footer class="footer-section">
         <div class="footer-container">
@@ -130,8 +89,46 @@
         </div>
     </footer>
 
-    <script src="js/courses.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/courses.js"></script>
+
+    <script>
+        // Use URLSearchParams to get the title and description from the URL
+        // const urlParams = new URLSearchParams(window.location.search);
+        const getResources = urlParams.get('resources');
+
+
+        // Parse the courseData back into an array of course objects
+        const resources = JSON.parse(decodeURIComponent(getResources));
+        // console.log(courses[0].videos);
+
+        function createBox(title, description, image, link, index) {
+            let div = document.createElement('div');
+            div.classList.add('card');
+            div.innerHTML = `
+                    <div class="image-container">
+                        <img src="${image}" alt="Course Image" class="course-img">
+                    </div>
+                    <div class="content">
+                        <h2 class="title">${title}</h2>
+                        <p class="description">${description}</p>
+                            <a href="${link}" class="btn">Learn More</a>
+                    </div>`;
+            
+
+            document.querySelector('.card-grid').appendChild(div);
+        }
+
+        // If course data is found, iterate over each course and create a box
+        if (resources) {
+            resources.forEach((resource, index) => {
+                createBox(resource.resourceTitle, resource.resourceDescription, resource.resourceImage, resource.resourceLink, index);
+            });
+        } else {
+            console.log('No course data found');
+        }
+
+    </script>
 </body>
 
 </html>

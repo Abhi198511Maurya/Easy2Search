@@ -276,18 +276,6 @@ main {
     font-size: 2.2rem;
 }
 
-.header-section-content p {
-    font-size: 1.2rem;
-}
-
-.header-section-content p a {
-    transition: color 0.5s ease, text-decoration 0.5s ease;
-}
-
-.header-section-content p a:hover {
-    color: var(--blue);
-}
-
 .investment-section {
     text-align: center;
     padding: 100px 3%;
@@ -701,8 +689,8 @@ main {
 
 .main-container .course-container .course-card {
     background-color: var(--text-color);
-    padding: 10px;
-    border-radius: 100px;
+    /* padding: 10px; */
+    /* border-radius: 100px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow: hidden;
@@ -713,7 +701,7 @@ main {
     height: 12rem;
     object-fit: fill;
     margin: auto auto;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .main-container .course-container .course-card .course-content {
@@ -771,9 +759,6 @@ main {
 @media (max-width: 480px) {
     .main-container .course-container .course-card img {
         display: none;
-    }
-    .main-container .course-container .course-card{
-        border-radius: 40px;
     }
 }
 

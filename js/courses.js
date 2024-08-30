@@ -34,23 +34,22 @@ function fetchData() {
         })
         .then((data) => {
             // console.log(data); // Log the data to ensure it's valid
-            for (let i = 0; i < data.resources.length; i++) {
+            for (let i = 0; i < data.collection.length; i++) {
                 let anchor = document.createElement('a');
                 anchor.classList.add("resource-card");
-                anchor.setAttribute("target", "_blank");
-                anchor.setAttribute("data-category", `${data.resources[i].category}`);
+                anchor.setAttribute("data-category", `${data.collection[i].category}`);
 
                 // Convert the course array to a JSON string and encode it
-                const courseData = encodeURIComponent(JSON.stringify(data.resources[i].course));
+                const courseData = encodeURIComponent(JSON.stringify(data.collection[i].topics));
 
                 // Construct the URL with the encoded course data
-                anchor.setAttribute("href", `page.html?courseData=${courseData}`);
+                anchor.setAttribute("href", `topicpage.html?courseData=${courseData}`);
 
                 anchor.innerHTML = `
                         <div class="image">
-                            <img src="${data.resources[i].image}" alt="Programming Course">
+                            <img src="${data.collection[i].courseImage}" alt="Programming Course">
                         </div>
-                        <h4>${data.resources[i].name}</h4>
+                        <h4>${data.collection[i].name}</h4>
                         <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>`;
 
                 document.querySelector(".resource-cards").appendChild(anchor);
@@ -79,24 +78,29 @@ const courseData = urlParams.get('courseData');
 const courses = JSON.parse(decodeURIComponent(courseData));
 // console.log(courses[0].videos);
 
-function createBox(title, description, index) {
-    let anchor = document.createElement('a');
-    anchor.classList.add('box');
-    const videos = encodeURIComponent(JSON.stringify(courses[index].videos));
+function createBox(title, topicImage, index) {
+    let div = document.createElement('div');
+    div.classList.add('card');
 
-    anchor.setAttribute("href", `videos.html?videos=${videos}`);
+    const resources = encodeURIComponent(JSON.stringify(courses[index].resources));
+
+    // anchor.setAttribute("href", `videos.html?videos=${videos}`);
     // anchor.setAttribute("href", "#");
-    anchor.innerHTML = `
-        <h2>${title}</h2>
-        <p>${description}</p>`;
-    document.querySelector('.boxs').appendChild(anchor);
+    div.innerHTML = `
+                    <div class="image-container">
+                        <img src="${topicImage}" alt="Course Image" class="course-img">
+                    </div>
+                    <div class="content">
+                        <h2 class="title">${title}</h2>
+                        <a href="content.html?resources=${resources}" class="btn">Learn More</a>
+                    </div>`;
+    document.querySelector('.card-grid').appendChild(div);
 }
 
 // If course data is found, iterate over each course and create a box
 if (courses) {
     courses.forEach((course, index) => {
-        createBox(course.title, course.description, index);
-
+        createBox(course.topicTitle, course.topicImage, index);        
     });
 } else {
     console.log('No course data found');
