@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="videos">
+
+    </div>
+
+    <script>
+        // Use URLSearchParams to get the title and description from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const arr = urlParams.get('videos');
+
+
+        // Parse the courseData back into an array of course objects
+        const videos = JSON.parse(decodeURIComponent(arr));
+        // console.log(courses[0].videos);
+
+        function createBox(title, description, index) {
+            let anchor = document.createElement('a');
+            anchor.classList.add('video');
+
+            anchor.setAttribute("href", '#');
+            anchor.innerHTML = `
+        <h2>${title}</h2>
+        <p>${description}</p>`;
+            document.querySelector('.videos').appendChild(anchor);
+        }
+
+        // If course data is found, iterate over each course and create a box
+        if (videos) {
+            videos.forEach((video, index) => {
+                createBox(video.title, video.description, index);
+
+            });
+        } else {
+            console.log('No course data found');
+        }
+
+    </script>
+</body>
+
+</html>

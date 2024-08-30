@@ -1,5 +1,7 @@
 // JavaScript for filtering resources
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
+// Function to attach filter functionality
+function attachFilterEventListeners() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const resourceCards = document.querySelectorAll('.resource-card');
 
@@ -22,4 +24,80 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-});
+}
+
+// Fetch data and add resource cards
+function fetchData() {
+    fetch("jsondata/resourcedata.json") // Make sure the path is correct
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            // console.log(data); // Log the data to ensure it's valid
+            for (let i = 0; i < data.resources.length; i++) {
+                let anchor = document.createElement('a');
+                anchor.classList.add("resource-card");
+                anchor.setAttribute("target", "_blank");
+                anchor.setAttribute("data-category", `${data.resources[i].category}`);
+
+                // Convert the course array to a JSON string and encode it
+                const courseData = encodeURIComponent(JSON.stringify(data.resources[i].course));
+
+                // Construct the URL with the encoded course data
+                anchor.setAttribute("href", `page.html?courseData=${courseData}`);
+
+                anchor.innerHTML = `
+                        <div class="image">
+                            <img src="${data.resources[i].image}" alt="Programming Course">
+                        </div>
+                        <h4>${data.resources[i].name}</h4>
+                        <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>`;
+
+                document.querySelector(".resource-cards").appendChild(anchor);
+            }
+
+            // After adding resource cards, attach the filtering functionality
+            attachFilterEventListeners(); // Ensure this is called after resources are added
+        })
+        .catch((err) => {
+            console.log("Error:", err.message); // Log the error with a descriptive message
+        });
+}
+
+// Call fetchData to populate the resource cards
+fetchData();
+// });
+
+
+
+// Use URLSearchParams to get the title and description from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const courseData = urlParams.get('courseData');
+
+
+// Parse the courseData back into an array of course objects
+const courses = JSON.parse(decodeURIComponent(courseData));
+// console.log(courses[0].videos);
+
+function createBox(title, description, index) {
+    let anchor = document.createElement('a');
+    anchor.classList.add('box');
+    const videos = encodeURIComponent(JSON.stringify(courses[index].videos));
+
+    anchor.setAttribute("href", `videos.html?videos=${videos}`);
+    // anchor.setAttribute("href", "#");
+    anchor.innerHTML = `
+        <h2>${title}</h2>
+        <p>${description}</p>`;
+    document.querySelector('.boxs').appendChild(anchor);
+}
+
+// If course data is found, iterate over each course and create a box
+if (courses) {
+    courses.forEach((course, index) => {
+        createBox(course.title, course.description, index);
+
+    });
+} else {
+    console.log('No course data found');
+}

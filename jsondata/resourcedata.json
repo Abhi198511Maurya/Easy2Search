@@ -1,0 +1,553 @@
+{
+    "resources": [
+        {
+            "name": "Python",
+            "category": "computer-science",
+            "image": "images/python.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Graphic Design",
+            "category": "design",
+            "image":"images/webdes.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Marketing Basics",
+            "category": "marketing",
+            "image": "images/marketing.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "App Development",
+            "category": "computer-science",
+            "image": "images/appdev.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Web Development",
+            "category": "computer-science",
+            "image": "images/webdev.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Java Language",
+            "category": "computer-science",
+            "image": "images/java.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Basic Natworking",
+            "category": "computer-science",
+            "image": "images/networking.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Projects",
+            "category": "projects",
+            "image": "images/project-ideas.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Earn Money",
+            "category": "earn-money",
+            "image": "images/money.jpg",
+            "course": [
+                {
+                    "title": "HTML",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course html"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "CSS",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course css"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                },
+                {
+                    "title": "JavaScript",
+                    "description": "about of the course",
+                    "videos": [
+                        {
+                            "title": "take from youtube by codewithharry",
+                            "description": "about of the course js"
+                        },
+                        {
+                            "title": "take from youtube by codewithjanny",
+                            "description": "about of the course"
+                        },
+                        {
+                            "title": "take from youtube by shradha",
+                            "description": "about of the course"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
