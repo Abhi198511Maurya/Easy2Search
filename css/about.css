@@ -1,3 +1,4 @@
+/* <!-- ---------------------------------- INITIALISE VARIABLE WITH COLORS  ------------------------------------- --> */
 :root {
     --blue: #6674cc;
     --text-color: #fff;
@@ -6,7 +7,7 @@
     --gray: #eef2f771;
 }
 
-/* About Section */
+/* <!-- ---------------------------------- ABOUT SECTION STYLE  ------------------------------------- --> */
 .about-section {
     padding: 3rem 2rem;
     background-color: var(--text-color);
@@ -102,7 +103,7 @@
 }
 
 
-/* Parallax Background */
+/* <!-- ---------------------------------- CTA SECTION STYLE  ------------------------------------- --> */
 .cta-section {
     background: url('your-image.jpg') no-repeat center center fixed;
     background-size: cover;

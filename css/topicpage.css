@@ -1,3 +1,4 @@
+/* <!-- ---------------------------------- INITIALISE VARIABLE WITH COLORS  ------------------------------------- --> */
 :root {
     --blue: #6674cc;
     --text-color: #fff;
@@ -6,10 +7,12 @@
     --gray: #eef2f771;
 }
 
+/* <!-- ---------------------------------- MAIN SECTION STYLE  ------------------------------------- --> */
 main{
     margin: 5rem auto;
 }
 
+/* <!-- ---------------------------------- COURSE SECTION STYLE  ------------------------------------- --> */
 .courses-section {
     width: 90%;
     max-width: 1200px;
@@ -94,7 +97,7 @@ main{
     background-color: #4a59ba;
 }
 
-/* Media queries for responsive design */
+/* <!-- ---------------------------------- MEDIA SECTION STYLE  ------------------------------------- --> */
 @media (max-width: 768px) {
     .courses-section .card-grid .card {
         flex-direction: column;

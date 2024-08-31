@@ -1,9 +1,10 @@
+/* <!-- ---------------------------------- MAIN SECTION STYLE  ------------------------------------- --> */
 main{
     margin-top: 60px;
     margin-bottom: 60px;
 }
 
-/*Blogs Container */
+/* <!-- ---------------------------------- BLOGS SECTION STYLE  ------------------------------------- --> */
 .blog-container {
     display: flex;
     width: 90%;
@@ -164,7 +165,7 @@ main{
     background-color: #6674cc;
 }
 
-/* Responsive Design */
+/* <!-- ---------------------------------- MEDIA QUERIES  ------------------------------------- --> */
 @media (max-width: 1024px) {
     .blog-container .blog-wrapper .row .single-blog {
         width: calc(50% - 20px);

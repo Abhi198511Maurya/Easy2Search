@@ -1,9 +1,76 @@
+const nav = document.createElement('nav');
+nav.classList.add('navbar');
+nav.innerHTML = `<div class="navbar-brand">
+            <a href="/"><img src="images/logo.png" alt="logo"></a>
+        </div>
+        <div class="navbar-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="login-btn"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i>login</a></li>
+        </ul>`;
+
+document.querySelector('body').prepend(nav);
+
+const footer = document.createElement('footer');
+footer.classList.add('footer-section');
+footer.innerHTML = `<div class="footer-container">
+            <div class="footer-row">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <h3>E-Learn</h3>
+                    <p>Your one-stop destination for discovering the best online courses and educational resources.
+                        Explore top platforms and start your learning journey today.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Links -->
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i> linkedin</a></li>
+                    </div>
+                </div>
+                <!-- Newsletter Subscription -->
+                <div class="footer-col">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p id="newsletter-response"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Learn. All rights reserved.</p>
+        </div>`;
+
+document.querySelector('body').insertAdjacentElement('beforeend',footer);
+
+
 window.addEventListener('scroll', function () {
     var navbar = document.querySelector('.navbar');
     if (window.scrollY > 150) { // Change 50 to your desired scroll distance
         navbar.style.position = "fixed"
         navbar.classList.add('scrolled');
-    }else {
+    } else {
         navbar.style.position = "absolute"
         navbar.classList.remove('scrolled');
     }
@@ -23,6 +90,11 @@ document.addEventListener('click', (e) => {
         icon.classList.remove('fa-xmark');
         navbarLinks.classList.remove('open');
     }
+});
+
+window.addEventListener('scroll', () => {
+    icon.classList.remove('fa-xmark');
+    navbarLinks.classList.remove('open');
 });
 
 // Get the current URL path
@@ -61,22 +133,22 @@ function showSlides() {
     const slides = [
         {
             image: './images/slide2.jpg',
-            title: 'Learn Job Ready Skills from Free Online Courses with Certificates',
-            description: 'Explore a wide range of courses designed to enhance your expertise in technology, business, arts, and more. Start learning today!',
+            title: 'Stop Searching and Start Learning: Find Knowledge Efficiently',
+            description: 'Tired of browsing YouTube for courses? EasyToSearch provides direct access to handpicked, high-quality courses, organized and ready, so you can focus on learning, not searching.',
             ctaPrimary: 'Read More',
             ctaSecondary: 'Sign up'
         },
         {
             image: './images/slide3.jpg',
-            title: 'Master the Art of Web Development with Comprehensive Courses',
-            description: 'Join our web development courses to build responsive, modern websites from scratch. Start your coding journey today!',
+            title: 'Your time matters. Start making the most of it now',
+            description: 'No matter where your curiosity leads you, Easy to Search is here to help you learn anything and everything, effortlessly. Start exploring today!',
             ctaPrimary: 'Read More',
             ctaSecondary: 'Sign up'
         },
         {
             image: './images/slide4.jpg',
-            title: 'Get Certified in AWS and Boost Your Career',
-            description: 'Enroll in our AWS certification courses and become a cloud computing expert. Enhance your resume with in-demand skills!',
+            title: 'Get Started with Easy to Search Today!',
+            description: 'Why wait? Easy to Search makes learning simple and effective. Our platform helps you master new skills, enhance your career, and explore new topics quickly.',
             ctaPrimary: 'Read More',
             ctaSecondary: 'Sign up'
         }

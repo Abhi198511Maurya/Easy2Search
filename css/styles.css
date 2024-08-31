@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/* <!-- ---------------------------------- INITIALISE VARIABLE COLORS  ------------------------------------- --> */
 :root {
     --blue: #6674cc;
     --text-color: #fff;
@@ -24,12 +25,13 @@ a {
     color: inherit;
 }
 
+/* <!-- ---------------------------------- MAIN SECTION STYLE  ------------------------------------- --> */
 main {
     margin: auto;
     max-width: 1260px;
 }
 
-/* navbar */
+/* <!-- ---------------------------------- NAVBAR SECTION STYLE  ------------------------------------- --> */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -47,10 +49,12 @@ main {
     background-color: var(--text-color);
     animation: slide_in 500ms ease-in-out both;
 }
-.navbar.scrolled .navbar-brand a{
+
+.navbar.scrolled .navbar-brand a {
     color: var(--text-sec);
 }
-.navbar.scrolled ul li a{
+
+.navbar.scrolled ul li a {
     color: var(--text-sec);
 }
 
@@ -59,7 +63,7 @@ main {
     0% {
         transform: translateY(-100%);
     }
-    
+
     100% {
         transform: translateY(0);
     }
@@ -72,8 +76,10 @@ main {
 
 .navbar .navbar-brand a {
     color: var(--text-color);
-    font-size: 2rem;
     text-decoration: none;
+}
+.navbar .navbar-brand a img{
+    width: 7rem;
 }
 
 .navbar .navbar-toggle {
@@ -89,7 +95,7 @@ main {
     color: var(--text-color);
 }
 
-.navbar.scrolled .navbar-toggle i{
+.navbar.scrolled .navbar-toggle i {
     color: var(--text-sec);
 }
 
@@ -102,6 +108,24 @@ main {
 .navbar .navbar-links li {
     margin: 0 3rem 0 0;
     padding: 1.5rem 0;
+}
+
+.navbar .navbar-links .login-btn {
+    /* background-color: var(--blue); */
+    padding: 6px 13px;
+    margin: auto;
+    border: 2px solid #6674cc;
+    border-radius: 6px;
+}
+
+.navbar .navbar-links .login-btn a i {
+    margin-right: 0.5rem;
+}
+
+.navbar .navbar-links .login-btn a {
+    color: var(--blue);
+    text-transform: capitalize;
+    font-size: 1.1rem;
 }
 
 .navbar .navbar-links a {
@@ -147,7 +171,7 @@ main {
     width: 100%;
 }
 
-/* Hero Section */
+/* <!-- ---------------------------------- HERO SECTION STYLES  ------------------------------------- --> */
 .hero {
     position: relative;
     height: 100vh;
@@ -174,13 +198,13 @@ main {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #ddd;
     margin-bottom: 40px;
@@ -201,7 +225,7 @@ main {
     border-radius: 5px;
     transition: box-shadow 0.3s linear;
     background-color: var(--blue);
-    box-shadow: 0 0 10px 2px var(--blue);
+    box-shadow: 0 0 15px 2px var(--blue);
 }
 
 .hero .hero-content .btn-secondary {
@@ -212,7 +236,7 @@ main {
     border-radius: 5px;
     transition: box-shadow 0.3s linear, color 0.3s linear;
     background-color: var(--text-color);
-    box-shadow: 0 0 10px 2px var(--text-color);
+    box-shadow: 0 0 15px 2px var(--text-color);
 }
 
 .hero .hero-content .btn-primary:hover {
@@ -252,6 +276,7 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* <!-- ---------------------------------- HEADER SECTION STYLES EXCEPT HOME PAGE  ------------------------------------- --> */
 .header-section-outer {
     position: relative;
     background-image: url('../images/slide3.jpg');
@@ -273,9 +298,10 @@ main {
     max-width: 55rem;
     margin: 10rem 0 2rem 10%;
     padding: 0 1rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
+/* <!-- ---------------------------------- INVESTMENT SECTION STYLES  ------------------------------------- --> */
 .investment-section {
     text-align: center;
     padding: 100px 3%;
@@ -289,7 +315,7 @@ main {
     margin-bottom: 8px;
 }
 
-.investment-section p {
+.investment-section>p {
     color: var(--text-sec);
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -337,6 +363,7 @@ main {
     color: var(--text-sec);
     font-size: 1rem;
     transition: color 0.3s ease;
+    text-align: justify;
 }
 
 .investment-section .cards-container .card:hover p,
@@ -344,7 +371,7 @@ main {
     color: var(--text-color);
 }
 
-
+/* <!-- ---------------------------------- WHY CHOOSE US SECTION STYLE  ------------------------------------- --> */
 .why-choose-us {
     /* max-width: 1200px; */
     margin: 2rem auto auto auto;
@@ -353,6 +380,7 @@ main {
 
 .why-choose-us .text-center {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .why-choose-us .text-center .title {
@@ -442,7 +470,7 @@ main {
     color: var(--text-sec);
 }
 
-/* CTA Section Styles */
+/* <!-- ---------------------------------- CTA SECTION SECTION STYLE  ------------------------------------- --> */
 .cta-section {
     display: flex;
     justify-content: center;
@@ -451,6 +479,7 @@ main {
     background: linear-gradient(135deg, var(--blue), #0057b348);
     color: var(--text-color);
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .cta-section .cta-content {
@@ -478,7 +507,7 @@ main {
     font-size: 1.2rem;
     border-radius: 30px;
     text-decoration: none;
-    transition: background-color 0.3s ease,color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-section .cta-content .cta-buttons .btn.btn-primary {
@@ -524,17 +553,17 @@ main {
     }
 }
 
-/* Popular Courses Section */
+/* <!-- ---------------------------------- POPULAR COURSES SECTION STYLE  ------------------------------------- --> */
 .popular-courses {
     padding: 50px;
-    background-color: var(--gray);
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .popular-courses h1 {
     font-size: 2.5rem;
     /* Reduced font size */
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: var(--text-sec);
 }
 
@@ -555,6 +584,7 @@ main {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 300px;
+    padding-bottom: 1rem;
     /* Reduced card width */
     transition: transform 0.3s ease, box-shadow 0.5s ease-in-out;
 }
@@ -590,24 +620,11 @@ main {
     margin-bottom: 15px;
 }
 
-/* Footer Styling */
-.popular-courses .course-cards .course-card .card-content .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popular-courses .course-cards .course-card .card-content .card-footer .course-info span {
-    font-size: 0.8rem;
-    /* Reduced footer icon font size */
-    color: #777;
-    margin-right: 8px;
-}
-
-.popular-courses .course-cards .course-card .card-content .card-footer .start-btn {
+.popular-courses .course-cards .course-card .card-content .start-btn {
     background-color: var(--blue);
     color: var(--text-color);
     padding: 4px 20px;
+    float: right;
     /* Reduced price tag padding */
     border-radius: 4px;
     font-weight: bold;
@@ -660,19 +677,22 @@ main {
     }
 }
 
-/* Main container for both course cards and sidebar */
+/* <!-- ---------------------------------- STAY UPDATED SECTION STYLE  ------------------------------------- --> */
 .stay-updated {
-    max-width: 1150px;
-    margin: 5rem auto;
+    padding: 3rem 0;
+    margin: auto;
+    background-color: var(--gray);
 }
 
-.stay-updated h1 {
+.stay-updated>h1 {
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .main-container {
+    margin: 0 auto;
+    max-width: 1150px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -738,7 +758,7 @@ main {
     background-image: url('https://static.vecteezy.com/system/resources/previews/033/116/193/non_2x/global-tech-savvy-ceo-navigating-digital-marketing-across-international-landscapes-vertical-mobile-wallpaper-ai-generated-free-photo.jpg');
     width: 20rem;
     /* height: 40vh; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     color: var(--text-color);
     display: flex;
     background-size: cover;
@@ -747,12 +767,21 @@ main {
 }
 
 .main-container .sidebar-container .sidebar-container-content {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
-    display: flex;
+}
+.main-container .sidebar-container .sidebar-container-content .content {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
     padding: 20px;
-    align-items: end;
+    text-align: justify;
+}
+
+.main-container .sidebar-container .sidebar-container-content .content h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* Responsive Design */
@@ -779,15 +808,16 @@ main {
         width: 12rem;
         /* height: 120px; */
     }
-    .main-container .sidebar-container{
+
+    .main-container .sidebar-container {
         display: none;
     }
 }
 
-/* frequentaly asked question */
+/* <!-- ---------------------------------- FAQ'S SECTION STYLE  ------------------------------------- --> */
 .faq-section {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 90%;
+    margin: 4rem auto;
     padding: 20px;
     background-color: var(--text-color);
     border-radius: 8px;
@@ -845,7 +875,8 @@ main {
     overflow-y: scroll;
     opacity: 1;
 }
-.faq-section .faq-container .faq-item.active .faq-answer::-webkit-scrollbar{
+
+.faq-section .faq-container .faq-item.active .faq-answer::-webkit-scrollbar {
     display: none;
 }
 
@@ -857,11 +888,11 @@ main {
 
 
 
-/* Footer Section */
+/* <!-- ---------------------------------- FOOTER SECTION STYLE  ------------------------------------- --> */
 .footer-section {
     background-color: var(--text-sec);
     color: var(--text-color);
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .footer-section .footer-container {
@@ -889,12 +920,17 @@ main {
 .footer-section .footer-container .footer-row .footer-col h3,
 .footer-section .footer-container .footer-row .footer-col h4 {
     color: var(--blue);
+    font-size: 1.2rem;
     margin-bottom: 15px;
+}
+
+.footer-section .footer-container .footer-row .footer-col h3 {
+    font-size: 1.4rem;
 }
 
 .footer-section .footer-container .footer-row .footer-col p {
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -917,14 +953,29 @@ main {
     color: var(--blue);
 }
 
+.footer-section .footer-container .footer-row .footer-col .social-links {
+    list-style: none;
+}
+
 .footer-section .footer-container .footer-row .footer-col .social-links a {
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-right: 15px;
     transition: color 0.3s ease;
 }
 
-.footer-section .footer-container .footer-row .footer-col .social-links a:hover {
+.footer-section .footer-container .footer-row .footer-col .social-links a i {
+    padding: 12px;
+    background-color: var(--blue);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.footer-section .footer-container .footer-row .footer-col .social-links a:hover i {
+    background-color: var(--text-color);
     color: var(--blue);
 }
 
@@ -951,10 +1002,11 @@ main {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.5s ease;
+    font-size: 1rem;
 }
 
 .footer-section .footer-container .footer-row .footer-col .newsletter-form button:hover {
-    background-color: var(--blue);
+    background-color: #3d4a9e;
 }
 
 .footer-section .footer-bottom {
@@ -966,11 +1018,11 @@ main {
 
 .footer-section .footer-bottom p {
     color: #ccc;
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 
-/* Responsive Styles */
+/* <!-- ---------------------------------- MEADIA QUERIES SECTION STYLE  ------------------------------------- --> */
 @media (max-width: 850px) {
     .navbar .navbar-toggle {
         display: flex;
@@ -1002,8 +1054,17 @@ main {
     }
 
     .navbar .navbar-links li {
-        background-color: #ffffff;
-        border: 2px solid var(--navColor);
+        background-color: var(--text-color);
+        border: 2px solid #6674cc;
+        border-radius: 20px;
+        margin: 1rem 0 0 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar .navbar-links .login-btn {
+        color: inherit;
+        border: 2px solid #6674cc;
         border-radius: 20px;
         margin: 1rem 0 0 0;
         padding: 10px;
@@ -1011,7 +1072,7 @@ main {
     }
 
     .navbar .navbar-links li a {
-        color: #000;
+        color: var(--black);
     }
 }
 
