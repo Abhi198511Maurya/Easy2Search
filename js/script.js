@@ -22,9 +22,9 @@ footer.innerHTML = `<div class="footer-container">
             <div class="footer-row">
                 <!-- Company Info -->
                 <div class="footer-col">
-                    <h3>E-Learn</h3>
-                    <p>Your one-stop destination for discovering the best online courses and educational resources.
-                        Explore top platforms and start your learning journey today.</p>
+                    <h3>Easy To Search</h3>
+                    <p>Your go-to platform for finding the best online courses and educational tools. Discover top
+                        resources and begin your learning journey now.</p>
                 </div>
                 <!-- Quick Links -->
                 <div class="footer-col">
@@ -59,7 +59,7 @@ footer.innerHTML = `<div class="footer-container">
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 E-Learn. All rights reserved.</p>
+            <p>&copy; 2024 Easy To Search. All rights reserved.</p>
         </div>`;
 
 document.querySelector('body').insertAdjacentElement('beforeend',footer);
