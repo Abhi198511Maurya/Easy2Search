@@ -1,7 +1,7 @@
 const nav = document.createElement('nav');
 nav.classList.add('navbar');
 nav.innerHTML = `<div class="navbar-brand">
-            <a href="/"><img src="images/logo.png" alt="logo"></a>
+            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
         </div>
         <div class="navbar-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
@@ -57,7 +57,7 @@ document.querySelector('.popup-outer').innerHTML = `<div id="loginModal" class="
             </div>
         </div>`;
 
-        
+
 const loginBtn = document.querySelector('.navbar ul .login-btn');
 const loginModal = document.getElementById('loginModal');
 const signupModal = document.getElementById('signupModal');
@@ -230,21 +230,21 @@ function showSlides() {
     const heroContent = document.querySelector('.hero-content');
     const slides = [
         {
-            image: './images/slide2.jpg',
+            image: './images/slide1.jpg',
             title: 'Stop Searching and Start Learning: Find Knowledge Efficiently',
             description: 'Tired of browsing YouTube for courses? EasyToSearch provides direct access to handpicked, high-quality courses, organized and ready, so you can focus on learning, not searching.',
             ctaPrimary: 'Read More',
             ctaSecondary: 'Sign up'
         },
         {
-            image: './images/slide3.jpg',
+            image: './images/slide2.avif',
             title: 'Your time matters. Start making the most of it now',
             description: 'No matter where your curiosity leads you, Easy to Search is here to help you learn anything and everything, effortlessly. Start exploring today!',
             ctaPrimary: 'Read More',
             ctaSecondary: 'Sign up'
         },
         {
-            image: './images/slide4.jpg',
+            image: './images/slide3.jpg',
             title: 'Get Started with Easy to Search Today!',
             description: 'Why wait? Easy to Search makes learning simple and effective. Our platform helps you master new skills, enhance your career, and explore new topics quickly.',
             ctaPrimary: 'Read More',

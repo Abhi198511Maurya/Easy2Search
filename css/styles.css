@@ -222,8 +222,11 @@ main {
     /* background-color: var(--blue); */
     padding: 6px 13px;
     margin: auto;
-    border: 2px solid #6674cc;
+    border: 2px solid #fff;
     border-radius: 6px;
+    color: var(--text-color);
+    text-transform: capitalize;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
@@ -231,10 +234,9 @@ main {
     margin-right: 0.5rem;
 }
 
-.navbar .navbar-links .login-btn {
+.navbar.scrolled .navbar-links .login-btn{
     color: var(--blue);
-    text-transform: capitalize;
-    font-size: 1.1rem;
+    border: 2px solid #6674cc;
 }
 
 .navbar .navbar-links a {
