@@ -31,6 +31,113 @@ main {
     max-width: 1260px;
 }
 
+
+.modal {
+    display: flex;
+    opacity: 0;
+    /* Hidden by default */
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    transform: scale(50%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Modal Content */
+.modal .modal-content {
+    margin: auto 1rem;
+    background-color: var(--text-color);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: var(--black);
+}
+
+.modal .modal-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.modal .modal-content form label {
+    font-size: 1.05rem;
+    float: left;
+    margin: auto auto 0.3rem 0.2rem;
+}
+
+.modal .modal-content form input[type="email"],
+.modal .modal-content form input[type="password"],
+.modal .modal-content form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: var(--text-sec);
+}
+
+.modal .modal-content form button[type="submit"] {
+    background-color: var(--blue);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.modal .modal-content form button[type="submit"]:hover {
+    background-color: #4753a6;
+}
+
+.modal .modal-content form p {
+    font-size: 14px;
+    margin: 20px 5px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.modal .modal-content form p a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.modal .modal-content form p a:hover {
+    text-decoration: underline;
+}
+
+/* Close Button */
+.modal .modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .model .modal-content {
+        width: 90%;
+    }
+}
+
+
 /* <!-- ---------------------------------- NAVBAR SECTION STYLE  ------------------------------------- --> */
 .navbar {
     display: flex;
@@ -78,7 +185,8 @@ main {
     color: var(--text-color);
     text-decoration: none;
 }
-.navbar .navbar-brand a img{
+
+.navbar .navbar-brand a img {
     width: 7rem;
 }
 
@@ -116,13 +224,14 @@ main {
     margin: auto;
     border: 2px solid #6674cc;
     border-radius: 6px;
+    cursor: pointer;
 }
 
-.navbar .navbar-links .login-btn a i {
+.navbar .navbar-links .login-btn i {
     margin-right: 0.5rem;
 }
 
-.navbar .navbar-links .login-btn a {
+.navbar .navbar-links .login-btn {
     color: var(--blue);
     text-transform: capitalize;
     font-size: 1.1rem;
@@ -705,6 +814,7 @@ main {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    z-index: 1;
 }
 
 .main-container .course-container .course-card {
@@ -714,13 +824,19 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow: hidden;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.main-container .course-container .course-card:hover{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+
 }
 
 .main-container .course-container .course-card img {
     width: 12rem;
     height: 12rem;
     object-fit: fill;
-    margin: auto auto;
+    margin: auto;
     /* border-radius: 50%; */
 }
 
@@ -749,7 +865,11 @@ main {
     text-transform: uppercase;
     font-size: 12px;
     border-radius: 5px;
+    transition: background-color 0.5s ease-in-out;
     text-decoration: none;
+}
+.main-container .course-container .course-card .course-content .course-btn:hover{
+    background-color: #3d4a9e;
 }
 
 /* Right Side (Sidebar) */
@@ -771,6 +891,7 @@ main {
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
 }
+
 .main-container .sidebar-container .sidebar-container-content .content {
     margin-top: auto;
     position: absolute;
@@ -779,7 +900,7 @@ main {
     text-align: justify;
 }
 
-.main-container .sidebar-container .sidebar-container-content .content h2{
+.main-container .sidebar-container .sidebar-container-content .content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }

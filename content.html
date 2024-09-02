@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <!-- ---------------------------------- POPUP USING JAVASCRIPT ------------------------------------- -->
+    <div class="popup-outer">
+        
+    </div>
     <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
 
 
@@ -49,12 +53,12 @@
         const resources = JSON.parse(decodeURIComponent(getResources));
         // console.log(courses[0].videos);
 
-        function createBox(title, description, image, link, index) {
+        function createBox(title, description, image, link, altResourceImage, index) {
             let div = document.createElement('div');
             div.classList.add('card');
             div.innerHTML = `
                     <div class="image-container">
-                        <img src="${image}" alt="Course Image" class="course-img">
+                        <img src="${image}" alt="${altResourceImage}" class="course-img">
                     </div>
                     <div class="content">
                         <h2 class="title">${title}</h2>
@@ -69,7 +73,7 @@
         // If course data is found, iterate over each course and create a box
         if (resources) {
             resources.forEach((resource, index) => {
-                createBox(resource.resourceTitle, resource.resourceDescription, resource.resourceImage, resource.resourceLink, index);
+                createBox(resource.resourceTitle, resource.resourceDescription, resource.resourceImage, resource.resourceLink, resource.altResourceImage, index);
             });
         } else {
             console.log('No course data found');

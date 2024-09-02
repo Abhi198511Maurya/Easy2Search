@@ -7,14 +7,112 @@ nav.innerHTML = `<div class="navbar-brand">
             <i class="fa-solid fa-bars"></i>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="/">Home</a></li>
+            <li><a href="index.html" href="#">Home</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li class="login-btn"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i>login</a></li>
+            <li class="login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i>login</li>
         </ul>`;
 
 document.querySelector('body').prepend(nav);
+
+// POPUP CODE USING JS
+document.querySelector('.popup-outer').innerHTML = `<div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Login to start learning</h2>
+                <form>
+                    <label for="loginEmail">Your Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+
+                    <label for="loginPassword">Your Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+
+                    <button type="submit">Login</button>
+
+                    <p><a href="#" id="switchToSignup">Sign Up</a><a href="#">Forgot password?</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Signup Popup -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Sign Up to Easy To Search</h2>
+                <form>
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" name="username" placeholder="User Name" required>
+
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+
+                    <button type="submit">Sign Up</button>
+
+                    <p> <a href="#" id="switchToLogin">Login with your account</a><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+        </div>`;
+
+        
+const loginBtn = document.querySelector('.navbar ul .login-btn');
+const loginModal = document.getElementById('loginModal');
+const signupModal = document.getElementById('signupModal');
+const closeBtns = document.querySelector(".close");
+
+
+loginBtn.addEventListener('click', () => {
+    loginModal.style.opacity = '1';
+    loginModal.style.zIndex = '5';
+    loginModal.style.transform = 'scale(100%)';
+});
+
+// Switch between login and signup
+document.getElementById("switchToSignup").onclick = function (e) {
+    e.preventDefault();
+    signupModal.style.opacity = "1";
+    signupModal.style.zIndex = '5';
+    signupModal.style.transform = 'scale(100%)';
+    loginModal.style.opacity = "0";
+    loginModal.style.zIndex = '-1';
+    loginModal.style.transform = 'scale(50%)';
+};
+
+document.getElementById("switchToLogin").onclick = function (e) {
+    e.preventDefault();
+    loginModal.style.opacity = "1";
+    loginModal.style.zIndex = '5';
+    loginModal.style.transform = 'scale(100%)';
+    signupModal.style.opacity = "0";
+    signupModal.style.zIndex = '-1';
+    signupModal.style.transform = 'scale(50%)';
+};
+closeBtns.addEventListener('click', () => {
+    loginModal.style.opacity = '0';
+    loginModal.style.zIndex = '-1';
+    loginModal.style.transform = 'scale(50%)';
+    signupModal.style.opacity = '0';
+    signupModal.style.zIndex = '-1';
+    signupModal.style.transform = 'scale(50%)';
+})
+
+
+// Close modal if user clicks outside content
+window.onclick = function (event) {
+    if (event.target == loginModal || event.target == signupModal) {
+        loginModal.style.opacity = '0';
+        loginModal.style.zIndex = '-1';
+        loginModal.style.transform = 'scale(50%)';
+        signupModal.style.opacity = '0';
+        signupModal.style.zIndex = '-1';
+        signupModal.style.transform = 'scale(50%)';
+    }
+};
+
+
 
 const footer = document.createElement('footer');
 footer.classList.add('footer-section');
@@ -62,7 +160,7 @@ footer.innerHTML = `<div class="footer-container">
             <p>&copy; 2024 Easy To Search. All rights reserved.</p>
         </div>`;
 
-document.querySelector('body').insertAdjacentElement('beforeend',footer);
+document.querySelector('body').insertAdjacentElement('beforeend', footer);
 
 
 window.addEventListener('scroll', function () {

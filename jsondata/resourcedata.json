@@ -1,28 +1,33 @@
 {
     "collection": [
         {
-            "name": "Python",
+            "name": "Web Development",
             "category": "computer-science",
             "courseImage": "images/python.jpg",
+            "altCourseImage": "python image",
             "topics": [
                 {
                     "topicTitle": "HTML",
-                    "topicImage": "images/webdes.jpg",
+                    "topicImage": "images/python.jpg",
+                    "altTopicImage": "python image",
                     "resources": [
                         {
                             "resourceImage":"images/python.jpg",
+                            "altResourceImage": "python image",
                             "resourceLink":"https://youtube.com",
                             "resourceTitle": "take from youtube by codewithharry",
                             "resourceDescription": "about of the course html"
                         },
                         {
                             "resourceImage":"images/python.jpg",
+                            "altResourceImage": "python image",
                             "resourceLink":"url",
                             "resourceTitle": "take from youtube by codewithjanny",
                             "resourceDescription": "about of the course"
                         },
                         {
                             "resourceImage":"images/python.jpg",
+                            "altResourceImage": "python image",
                             "resourceLink":"url",
                             "resourceTitle": "take from youtube by shradha",
                             "resourceDescription": "about of the course"
