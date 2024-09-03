@@ -464,7 +464,7 @@ main {
 }
 
 .investment-section .cards-container .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
     color: var(--text-sec);
     transition: color 0.3s ease;

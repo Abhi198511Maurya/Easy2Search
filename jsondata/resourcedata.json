@@ -2,9 +2,9 @@
     "collection": [
         {
             "name": "Web Development",
-            "category": "computer-science",
-            "courseImage": "images/python.jpg",
-            "altCourseImage": "python image",
+            "category": "development",
+            "courseImage": "https://media.istockphoto.com/id/1687689352/photo/web-development-coding-programming-internet-technology-business-concept-business-woman-hand.jpg?s=612x612&w=0&k=20&c=Ksss9knECA7t8fNYyJBEe7SYYzxzBrR4VP7gIuPdurU=",
+            "altCourseImage": "web development",
             "topics": [
                 {
                     "topicTitle": "HTML",
@@ -12,29 +12,78 @@
                     "altTopicImage": "python image",
                     "resources": [
                         {
-                            "resourceImage":"images/python.jpg",
+                            "resourceImage": "images/python.jpg",
                             "altResourceImage": "python image",
-                            "resourceLink":"https://youtube.com",
+                            "resourceLink": "https://youtube.com",
                             "resourceTitle": "take from youtube by codewithharry",
                             "resourceDescription": "about of the course html"
                         },
                         {
-                            "resourceImage":"images/python.jpg",
+                            "resourceImage": "images/python.jpg",
                             "altResourceImage": "python image",
-                            "resourceLink":"url",
+                            "resourceLink": "url",
                             "resourceTitle": "take from youtube by codewithjanny",
                             "resourceDescription": "about of the course"
                         },
                         {
-                            "resourceImage":"images/python.jpg",
+                            "resourceImage": "images/python.jpg",
                             "altResourceImage": "python image",
-                            "resourceLink":"url",
+                            "resourceLink": "url",
                             "resourceTitle": "take from youtube by shradha",
                             "resourceDescription": "about of the course"
                         }
                     ]
                 }
             ]
+        },
+        {
+            "name": "Software Development",
+            "category": "development",
+            "courseImage": "https://media.istockphoto.com/id/1706968109/photo/software-development-concept-businessman-typing-on-keyboard-with-software-development-icon-on.jpg?s=612x612&w=0&k=20&c=VnAW_Gxm4OdwrocqUMbXut74RyGZ2lf5g1SvQ3PWSfw=",
+            "altCourseImage": "software development",
+            "topics": []
+        },
+        {
+            "name": "App Development",
+            "category": "development",
+            "courseImage": "https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg?ga=GA1.1.1961596263.1724598171&semt=ais_hybrid",
+            "altCourseImage": "app development",
+            "topics": []
+        },
+        {
+            "name": "Game Development",
+            "category": "development",
+            "courseImage": "https://img.freepik.com/premium-photo/man-wearing-virtual-reality-headset-public-space-bokeh-style-background_622818-16128.jpg?ga=GA1.1.1961596263.1724598171&semt=ais_hybrid",
+            "altCourseImage": "game development",
+            "topics": []
+        },
+        {
+            "name": "API Development",
+            "category": "development",
+            "courseImage": "https://media.istockphoto.com/id/1486359719/photo/api-application-programming-interface-software-development-tool.jpg?s=612x612&w=0&k=20&c=rbKL2X_bXfzrYfjHeO1xYwnKOfiGyZOanp_9salpYw8=",
+            "altCourseImage": "api development",
+            "topics": []
+        },
+        {
+            "name": "Programming Language",
+            "category": "programming",
+            "courseImage": "https://img.freepik.com/premium-photo/programming-code-abstract-technology-background-software-developer-computer-script_34663-31.jpg?ga=GA1.1.1961596263.1724598171&semt=ais_hybrid",
+            "altCourseImage": "proramming languages",
+            "topics": []
+        },
+        {
+            "name": "Designing",
+            "category": "designing",
+            "courseImage": "https://img.freepik.com/premium-photo/topdown-shot-designer-using-ipad-pro-with-creative-tools-table-reflecting-professional-work_1117469-29226.jpg?w=1380",
+            "altCourseImage": "designing",
+            "topics": []
+        },
+        {
+            "name": "Marketing",
+            "category": "marketing",
+            "courseImage": "https://media.istockphoto.com/id/1174367433/photo/marketing-of-digital-technology-business-concept.jpg?s=612x612&w=0&k=20&c=TGKW4kjxK4vBBmDBxA4UJGAEaHO4Q613JQ9xpS7NAPI=",
+            "altCourseImage": "marketing",
+            "topics": []
         }
     ]
 }

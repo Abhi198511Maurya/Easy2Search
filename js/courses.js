@@ -49,12 +49,14 @@ function fetchData() {
                         <div class="image">
                             <img src="${data.collection[i].courseImage}" alt="${data.collection[i].altCourseImage}">
                         </div>
+                        <div class="content">
                         <h4>${data.collection[i].name}</h4>
-                        <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>`;
+                        <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
+                        </div>`;
 
                 document.querySelector(".resource-cards").appendChild(anchor);
             }
-
+            showMoreCards();
             // After adding resource cards, attach the filtering functionality
             attachFilterEventListeners(); // Ensure this is called after resources are added
         })
@@ -78,7 +80,7 @@ const topicData = urlParams.get('topicData');
 const topics = JSON.parse(decodeURIComponent(topicData));
 // console.log(topics[0].videos);
 
-function createBox(title, topicImage,altTopicImage, index) {
+function createBox(title, topicImage, altTopicImage, index) {
     let div = document.createElement('div');
     div.classList.add('card');
 
@@ -104,4 +106,52 @@ if (topics) {
     });
 } else {
     console.log('No course data found');
+}
+
+function showMoreCards() {
+    const cards = document.querySelectorAll('.resource-card'); // All the cards
+    const showMoreBtn = document.querySelector('.show-more-btn');
+    const showLessBtn = document.querySelector('.show-less-btn');
+    const cardsToShow = 4; // Number of cards to show initially
+    let cardsShown = cardsToShow; // Track how many cards are visible
+
+    // Hide all cards except the first 6
+    cards.forEach((card, index) => {
+        if (index >= cardsToShow) {
+            card.style.display = 'none';
+        }
+    });
+
+    // "Show More" button click event
+    showMoreBtn.addEventListener('click', () => {
+        cards.forEach((card, index) => {
+            if (index >= cardsShown) {
+                card.style.display = 'block';
+            }
+        });
+
+        // Once all cards are shown, hide "Show More" button and show "Display Less"
+        if (cardsShown >= cards.length) {
+            showMoreBtn.style.display = 'none';
+            showLessBtn.style.display = 'block';
+        }
+
+        // Increase the number of visible cards
+        cardsShown += cardsToShow;
+    });
+
+    // "Display Less" button click event
+    showLessBtn.addEventListener('click', () => {
+        // Hide all cards except the first 6
+        cards.forEach((card, index) => {
+            if (index >= cardsToShow) {
+                card.style.display = 'none';
+            }
+        });
+
+        // Reset cardsShown and toggle buttons
+        cardsShown = cardsToShow;
+        showLessBtn.style.display = 'none';
+        showMoreBtn.style.display = 'block';
+    });
 }

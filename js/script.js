@@ -132,7 +132,7 @@ footer.innerHTML = `<div class="footer-container">
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a #">Login</a></li>
                     </ul>
                 </div>
                 <!-- Social Media Links -->
@@ -268,7 +268,7 @@ function showSlides() {
             <p>${slides[slideIndex].description}</p>
             <div class="cta-buttons">
                 <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
-                <a href="about.html" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
+                <a href="#" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
             </div>
         `;
 
