@@ -1,3 +1,4 @@
+// ---------------------------------- NAVIGATION BAR USING JS --------------------------------------- //
 const nav = document.createElement('nav');
 nav.classList.add('navbar');
 nav.innerHTML = `<div class="navbar-brand">
@@ -16,7 +17,7 @@ nav.innerHTML = `<div class="navbar-brand">
 
 document.querySelector('body').prepend(nav);
 
-// POPUP CODE USING JS
+// ---------------------------------- LOGIN POPUP USING JS --------------------------------------- //
 document.querySelector('.popup-outer').innerHTML = `<div id="loginModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -57,7 +58,7 @@ document.querySelector('.popup-outer').innerHTML = `<div id="loginModal" class="
             </div>
         </div>`;
 
-
+// --------------------------------  TO SHOW THE LOGIN POPUP USING JS ----------------------------------- //
 const loginBtn = document.querySelector('.navbar ul .login-btn');
 const loginModal = document.getElementById('loginModal');
 const signupModal = document.getElementById('signupModal');
@@ -113,7 +114,7 @@ window.onclick = function (event) {
 };
 
 
-
+// ---------------------------------- ADD FOOTER USING JS --------------------------------------- //
 const footer = document.createElement('footer');
 footer.classList.add('footer-section');
 footer.innerHTML = `<div class="footer-container">
@@ -132,7 +133,7 @@ footer.innerHTML = `<div class="footer-container">
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a #">Login</a></li>
+                        <li><a href="#">Login</a></li>
                     </ul>
                 </div>
                 <!-- Social Media Links -->
@@ -149,7 +150,7 @@ footer.innerHTML = `<div class="footer-container">
                 <div class="footer-col">
                     <h4>Subscribe to Our Newsletter</h4>
                     <form id="newsletter-form" class="newsletter-form">
-                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <input type="email" id="newsletter-email" placeholder="Enter your email">
                         <button type="submit">Subscribe</button>
                     </form>
                     <p id="newsletter-response"></p>
@@ -162,10 +163,31 @@ footer.innerHTML = `<div class="footer-container">
 
 document.querySelector('body').insertAdjacentElement('beforeend', footer);
 
+// ---------------------------------- FOOTER SUBSCRIPTION SECTION  --------------------------------------- //
+document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
+    const email = document.getElementById('newsletter-email').value.trim();
+    const responseMessage = document.getElementById('newsletter-response');
+
+    if (email.length === 0) {
+        responseMessage.textContent = 'Please enter your email.';
+        responseMessage.style.color = 'red';
+        return;
+    }
+
+    // Simulate subscription process
+    setTimeout(() => {
+        responseMessage.textContent = 'Thank you for subscribing!';
+        responseMessage.style.color = 'green';
+        document.getElementById('newsletter-form').reset();
+    }, 1000);
+});
+
+// ---------------------------------- ADD CLASS SCROLLED ON SCROLL USING JS --------------------------------------- //
 window.addEventListener('scroll', function () {
     var navbar = document.querySelector('.navbar');
-    if (window.scrollY > 150) { // Change 50 to your desired scroll distance
+    if (window.scrollY > 100) { // Change 100 to your desired scroll distance
         navbar.style.position = "fixed"
         navbar.classList.add('scrolled');
     } else {
@@ -174,12 +196,12 @@ window.addEventListener('scroll', function () {
     }
 });
 
-
+// --------------------- RESPONSIVE NAVIGATION (MENU BAR) BAR USING JS ---------------------------- //
 const mobileMenu = document.getElementById('mobile-menu');
 const navbarLinks = document.getElementById('navbar-links');
 const icon = mobileMenu.querySelector('#mobile-menu i');
 
-// CLICK EVENT ON OUTSIDE OF NAVLINKS
+// ---------------------------------- CLICK EVENT ON OUTSIDE OF NAVLINKS ----------------------------- //
 document.addEventListener('click', (e) => {
     if (mobileMenu.contains(e.target)) {
         navbarLinks.classList.toggle('open');
@@ -190,23 +212,22 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
+// ---------------------------------- HIDE NAV LINKS ON MOBILES  --------------------------------------- //
 window.addEventListener('scroll', () => {
     icon.classList.remove('fa-xmark');
     navbarLinks.classList.remove('open');
 });
 
-// Get the current URL path
+
+// ---------------------------------- GET THE CURRENT PATH AND ADD UNDERLINE TO THE NAVIGATION LINKS --------------------------------------- //
 const currentPath = window.location.pathname;
 
-// Select all the navigation links
 const navLinks = document.querySelectorAll('.navbar-links li a');
 
-// Loop through each link
 navLinks.forEach(link => {
-    // Extract the path from the link's href
     const linkPath = new URL(link.href).pathname;
 
-    // Check if the link's path matches the current path
     if (linkPath === currentPath) {
         link.classList.add('underline');
     } else {
@@ -214,8 +235,7 @@ navLinks.forEach(link => {
     }
 });
 
-// Slideshow functionality with dynamic text and transitions
-
+// ---------------------------------- SLIDER IN HERO SECTION --------------------------------------- //
 let slideIndex = 0;
 showSlides();
 
@@ -262,7 +282,6 @@ function showSlides() {
     heroContent.classList.remove('show');
 
     setTimeout(() => {
-        // Update text content
         heroContent.innerHTML = `
             <h1>${slides[slideIndex].title}</h1>
             <p>${slides[slideIndex].description}</p>
@@ -282,6 +301,8 @@ setInterval(() => {
     plusSlides(1);
 }, 7000);
 
+
+// ---------------------------------- FAQ'S SECTION  --------------------------------------- //
 document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
         const parent = item.parentNode;
@@ -299,24 +320,4 @@ document.querySelectorAll('.faq-question').forEach(item => {
 });
 
 
-// footer secition
-// Handle Newsletter Subscription
-document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-    e.preventDefault();
 
-    const email = document.getElementById('newsletter-email').value.trim();
-    const responseMessage = document.getElementById('newsletter-response');
-
-    if (email === '') {
-        responseMessage.textContent = 'Please enter your email.';
-        responseMessage.style.color = 'red';
-        return;
-    }
-
-    // Simulate subscription process
-    setTimeout(() => {
-        responseMessage.textContent = 'Thank you for subscribing!';
-        responseMessage.style.color = 'green';
-        document.getElementById('newsletter-form').reset();
-    }, 1000);
-});

@@ -44,7 +44,7 @@ main{
 
 .courses-section .card-grid .card .image-container {
     flex: 0 0 300px; /* Fixed width */
-    height: 200px; /* Set a fixed height for the image container */
+    /* height: 200px; Set a fixed height for the image container */
     overflow: hidden;
 }
 

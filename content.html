@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos Page</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/topicpage.css">
+    <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -54,7 +54,6 @@
 
         // Parse the courseData back into an array of course objects
         const resources = JSON.parse(decodeURIComponent(getResources));
-        // console.log(courses[0].videos);
 
         function createBox(title, description, image, link, altResourceImage, index) {
             let div = document.createElement('div');

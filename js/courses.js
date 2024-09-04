@@ -1,157 +1,130 @@
-// JavaScript for filtering resources
-// document.addEventListener('DOMContentLoaded', function () {
-// Function to attach filter functionality
+// Attach filter event listeners
 function attachFilterEventListeners() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const resourceCards = document.querySelectorAll('.resource-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
 
             const category = this.getAttribute('data-category');
 
-            // Filter resources based on category
             resourceCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? 'block' : 'none';
             });
         });
     });
 }
 
-// Fetch data and add resource cards
-function fetchData() {
-    fetch("jsondata/resourcedata.json") // Make sure the path is correct
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            // console.log(data); // Log the data to ensure it's valid
-            for (let i = 0; i < data.collection.length; i++) {
-                let anchor = document.createElement('a');
-                anchor.classList.add("resource-card");
-                anchor.setAttribute("data-category", `${data.collection[i].category}`);
-
-                // Convert the course array to a JSON string and encode it
-                const topicData = encodeURIComponent(JSON.stringify(data.collection[i].topics));
-
-                // Construct the URL with the encoded course data
-                anchor.setAttribute("href", `topicpage.html?topicData=${topicData}`);
-
-                anchor.innerHTML = `
-                        <div class="image">
-                            <img src="${data.collection[i].courseImage}" alt="${data.collection[i].altCourseImage}">
-                        </div>
-                        <div class="content">
-                        <h4>${data.collection[i].name}</h4>
-                        <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
-                        </div>`;
-
-                document.querySelector(".resource-cards").appendChild(anchor);
-            }
-            showMoreCards();
-            // After adding resource cards, attach the filtering functionality
-            attachFilterEventListeners(); // Ensure this is called after resources are added
-        })
-        .catch((err) => {
-            console.log("Error:", err.message); // Log the error with a descriptive message
-        });
-}
-
-// Call fetchData to populate the resource cards
-fetchData();
-// });
-
-
-
-// Use URLSearchParams to get the title and description from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const topicData = urlParams.get('topicData');
-
-
-// Parse the topicData back into an array of course objects
-const topics = JSON.parse(decodeURIComponent(topicData));
-// console.log(topics[0].videos);
-
-function createBox(title, topicImage, altTopicImage, index) {
-    let div = document.createElement('div');
-    div.classList.add('card');
-
-    const resources = encodeURIComponent(JSON.stringify(topics[index].resources));
-
-    // anchor.setAttribute("href", `videos.html?videos=${videos}`);
-    // anchor.setAttribute("href", "#");
-    div.innerHTML = `
-                    <div class="image-container">
-                        <img src="${topicImage}" alt="${altTopicImage}" class="course-img">
-                    </div>
-                    <div class="content">
-                        <h2 class="title">${title}</h2>
-                        <a href="content.html?resources=${resources}" class="btn">Learn More</a>
-                    </div>`;
-    document.querySelector('.card-grid').appendChild(div);
-}
-
-// If course data is found, iterate over each course and create a box
-if (topics) {
-    topics.forEach((topic, index) => {
-        createBox(topic.topicTitle, topic.topicImage, topic.altTopicImage, index);
-    });
-} else {
-    console.log('No course data found');
-}
-
+// Show more / show less functionality
 function showMoreCards() {
-    const cards = document.querySelectorAll('.resource-card'); // All the cards
+    const cards = document.querySelectorAll('.resource-card');
     const showMoreBtn = document.querySelector('.show-more-btn');
     const showLessBtn = document.querySelector('.show-less-btn');
-    const cardsToShow = 4; // Number of cards to show initially
-    let cardsShown = cardsToShow; // Track how many cards are visible
+    const cardsToShow = 8;
+    let cardsShown = cardsToShow;
 
-    // Hide all cards except the first 6
     cards.forEach((card, index) => {
-        if (index >= cardsToShow) {
-            card.style.display = 'none';
-        }
+        card.style.display = index < cardsToShow ? 'block' : 'none';
     });
 
-    // "Show More" button click event
     showMoreBtn.addEventListener('click', () => {
         cards.forEach((card, index) => {
-            if (index >= cardsShown) {
+            if (index >= cardsShown && index < cardsShown + cardsToShow) {
                 card.style.display = 'block';
             }
         });
 
-        // Once all cards are shown, hide "Show More" button and show "Display Less"
         if (cardsShown >= cards.length) {
             showMoreBtn.style.display = 'none';
             showLessBtn.style.display = 'block';
         }
 
-        // Increase the number of visible cards
         cardsShown += cardsToShow;
     });
 
-    // "Display Less" button click event
     showLessBtn.addEventListener('click', () => {
-        // Hide all cards except the first 6
         cards.forEach((card, index) => {
-            if (index >= cardsToShow) {
-                card.style.display = 'none';
-            }
+            card.style.display = index < cardsToShow ? 'block' : 'none';
         });
 
-        // Reset cardsShown and toggle buttons
         cardsShown = cardsToShow;
         showLessBtn.style.display = 'none';
         showMoreBtn.style.display = 'block';
     });
+}
+
+
+
+async function loadJsonData(filePath) {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+        return null;
+    }
+}
+
+// Fetch data and populate cards
+async function fetchData() {
+    const data = await loadJsonData('jsondata/resourcedata.json');
+    if (data) {
+        data.collection.forEach(item => {
+            const anchor = document.createElement('a');
+            anchor.classList.add("resource-card");
+            anchor.setAttribute("data-category", item.category);
+
+            const topicData = encodeURIComponent(JSON.stringify(item.topics));
+            anchor.setAttribute("href", `topicpage.html?topicData=${topicData}`);
+
+            anchor.innerHTML = `
+                <div class="image">
+                    <img src="${item.courseImage}" alt="${item.altCourseImage}">
+                </div>
+                <div class="content">
+                    <h4>${item.name}</h4>
+                    <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
+                </div>`;
+
+            document.querySelector(".resource-cards").appendChild(anchor);
+        });
+        showMoreCards();
+        attachFilterEventListeners();
+    }
+}
+
+fetchData();
+
+// Create boxes from URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const topicData = urlParams.get('topicData');
+const topics = JSON.parse(decodeURIComponent(topicData));
+
+function createBox(title, topicImage, altTopicImage, index) {
+    const div = document.createElement('div');
+    div.classList.add('card');
+
+    const resources = encodeURIComponent(JSON.stringify(topics[index].resources));
+
+    div.innerHTML = `
+        <div class="image-container">
+            <img src="${topicImage}" alt="${altTopicImage}" class="course-img">
+        </div>
+        <div class="content">
+            <h2 class="title">${title}</h2>
+            <a href="content.html?resources=${resources}" class="btn">Learn More</a>
+        </div>`;
+    document.querySelector('.card-grid').appendChild(div);
+}
+
+if (topics) {
+    topics.forEach((topic, index) => createBox(topic.topicTitle, topic.topicImage, topic.altTopicImage, index));
+} else {
+    console.log('No course data found');
 }
