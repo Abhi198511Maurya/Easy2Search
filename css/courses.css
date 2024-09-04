@@ -207,9 +207,9 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .recommended-resources .resource-cards .resource-card {
-        width: 70%;
+        width: 60%;
     }
 
     .recommended-resources .resource-filters.filter-btn {

@@ -56,39 +56,45 @@ function showMoreCards() {
 }
 
 
-
+// async function to get the data from JSON file
 async function loadJsonData(filePath) {
     try {
         const response = await fetch(filePath);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
+        console.error('Fetch operation error:', error);
         return null;
     }
 }
 
-// Fetch data and populate cards
+// function to store the data in local storage
+function storeDataLocally(data) {
+    localStorage.setItem('collectionData', JSON.stringify(data));
+}
+
+// function to fatch the data from JSON file
 async function fetchData() {
     const data = await loadJsonData('jsondata/resourcedata.json');
     if (data) {
-        data.collection.forEach(item => {
+        // store collection data into localstorage
+        storeDataLocally(data.collection);
+
+        data.collection.forEach(course => {
             const anchor = document.createElement('a');
             anchor.classList.add("resource-card");
-            anchor.setAttribute("data-category", item.category);
+            anchor.setAttribute("data-category", course.category);
 
-            const topicData = encodeURIComponent(JSON.stringify(item.topics));
-            anchor.setAttribute("href", `topicpage.html?topicData=${topicData}`);
-
+            // passing data using URL
+            anchor.setAttribute("href", `topicpage.html?course=${encodeURIComponent(course.name)}`);
+            
             anchor.innerHTML = `
                 <div class="image">
-                    <img src="${item.courseImage}" alt="${item.altCourseImage}">
+                    <img src="${course.courseImage}" alt="${course.altCourseImage}">
                 </div>
                 <div class="content">
-                    <h4>${item.name}</h4>
+                    <h4>${course.name}</h4>
                     <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
                 </div>`;
 
@@ -100,31 +106,3 @@ async function fetchData() {
 }
 
 fetchData();
-
-// Create boxes from URL parameters
-const urlParams = new URLSearchParams(window.location.search);
-const topicData = urlParams.get('topicData');
-const topics = JSON.parse(decodeURIComponent(topicData));
-
-function createBox(title, topicImage, altTopicImage, index) {
-    const div = document.createElement('div');
-    div.classList.add('card');
-
-    const resources = encodeURIComponent(JSON.stringify(topics[index].resources));
-
-    div.innerHTML = `
-        <div class="image-container">
-            <img src="${topicImage}" alt="${altTopicImage}" class="course-img">
-        </div>
-        <div class="content">
-            <h2 class="title">${title}</h2>
-            <a href="content.html?resources=${resources}" class="btn">Learn More</a>
-        </div>`;
-    document.querySelector('.card-grid').appendChild(div);
-}
-
-if (topics) {
-    topics.forEach((topic, index) => createBox(topic.topicTitle, topic.topicImage, topic.altTopicImage, index));
-} else {
-    console.log('No course data found');
-}

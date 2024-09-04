@@ -47,38 +47,41 @@
     <script src="js/courses.js"></script>
 
     <script>
-        // Use URLSearchParams to get the title and description from the URL
-        // const urlParams = new URLSearchParams(window.location.search);
-        const getResources = urlParams.get('resources');
-
-
-        // Parse the courseData back into an array of course objects
-        const resources = JSON.parse(decodeURIComponent(getResources));
-
-        function createBox(title, description, image, link, altResourceImage, index) {
-            let div = document.createElement('div');
+        function createBox(title, description, image, link, altResourceImage) {
+            const div = document.createElement('div');
             div.classList.add('card');
             div.innerHTML = `
-                    <div class="image-container">
-                        <img src="${image}" alt="${altResourceImage}" class="course-img">
-                    </div>
-                    <div class="content">
-                        <h2 class="title">${title}</h2>
-                        <p class="description">${description}</p>
-                            <a href="${link}" class="btn" target="_blank">Learn More</a>
-                    </div>`;
-
-
+        <div class="image-container">
+            <img src="${image}" alt="${altResourceImage}" class="course-img">
+        </div>
+        <div class="content">
+            <h2 class="title">${title}</h2>
+            <p class="description">${description}</p>
+            <a href="${link}" class="btn" target="_blank">Learn More</a>
+        </div>`;
             document.querySelector('.card-grid').appendChild(div);
         }
 
-        // If course data is found, iterate over each course and create a box
-        if (resources) {
-            resources.forEach((resource, index) => {
-                createBox(resource.resourceTitle, resource.resourceDescription, resource.resourceImage, resource.resourceLink, resource.altResourceImage, index);
+        function getResourcesFromLocalStorage() {
+            const resources = localStorage.getItem('selectedResources');
+            return resources ? JSON.parse(resources) : [];
+        }
+
+        // Get the topic name from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const topicName = decodeURIComponent(urlParams.get('topic'));
+
+        // Retrieve the resources stored in localStorage
+        const resources = getResourcesFromLocalStorage();
+
+        // Display resources if they exist
+        if (resources.length > 0) {
+            // Filter resources based on topicName if needed
+            resources.forEach(resource => {
+                createBox(resource.resourceTitle, resource.resourceDescription, resource.resourceImage, resource.resourceLink, resource.altResourceImage);
             });
         } else {
-            console.log('No course data found');
+            console.log('No resources found or data was not stored correctly.');
         }
 
     </script>

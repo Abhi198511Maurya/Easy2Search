@@ -15,7 +15,7 @@
 <body>
     <!-- ---------------------------------- POPUP USING JAVASCRIPT ------------------------------------- -->
     <div class="popup-outer">
-        
+
     </div>
     <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
 
@@ -32,11 +32,11 @@
 
     <!-- ---------------------------------- MAIN ------------------------------------- -->
     <main>
-    <!-- ---------------------------------- TOPICS SCTION ------------------------------------- -->
+        <!-- ---------------------------------- TOPICS SCTION ------------------------------------- -->
         <section class="courses-section">
             <div class="card-grid">
                 <!-- Card 1 -->
-                
+
             </div>
         </section>
     </main>
@@ -45,6 +45,61 @@
 
     <script src="js/script.js"></script>
     <script src="js/courses.js"></script>
+
+    <script>
+        function getDataFromLocalStorage() {
+            const storedData = localStorage.getItem('collectionData');
+            return storedData ? JSON.parse(storedData) : null;
+        }
+
+        function createBox(title, topicImage, altTopicImage, resources) {
+            const div = document.createElement('div');
+            div.classList.add('card');
+
+            div.innerHTML = `
+        <div class="image-container">
+            <img src="${topicImage}" alt="${altTopicImage}" class="course-img">
+        </div>
+        <div class="content">
+            <h2 class="title">${title}</h2>
+            <a href="#" class="btn">Learn More</a>
+        </div>`;
+
+            document.querySelector('.card-grid').appendChild(div);
+
+            // Add click event listener to the "Learn More" button
+            div.querySelector('.btn').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+                storeResources(resources); // Store resources
+                window.location.href = `content.html?topic=${encodeURIComponent(title)}`; // Redirect with URL parameter
+            });
+        }
+
+        function storeResources(resources) {
+            localStorage.setItem('selectedResources', JSON.stringify(resources));
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const topics = decodeURIComponent(urlParams.get('course'));
+
+        const collection = getDataFromLocalStorage();
+
+        if (collection && topics) {
+            const course = collection.find(item => item.name === topics);
+
+            if (course && course.topics.length > 0) {
+                course.topics.forEach(topic => {
+                    createBox(topic.topicTitle, topic.topicImage, topic.altTopicImage, topic.resources);
+                });
+            } else {
+                console.log('No topics found for this course.');
+            }
+        } else {
+            console.log('No course data found.');
+        }
+
+
+    </script>
 </body>
 
 </html>
