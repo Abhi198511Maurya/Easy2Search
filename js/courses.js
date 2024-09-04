@@ -69,17 +69,17 @@ async function loadJsonData(filePath) {
     }
 }
 
-// function to store the data in session storage
-function storeDataInSession(data) {
-    sessionStorage.setItem('collectionData', JSON.stringify(data));
+// function to store the data in local storage
+function storeDataLocally(data) {
+    localStorage.setItem('collectionData', JSON.stringify(data));
 }
 
-// function to fetch the data from JSON file
+// function to fatch the data from JSON file
 async function fetchData() {
     const data = await loadJsonData('jsondata/resourcedata.json');
     if (data) {
-        // store collection data into sessionStorage
-        storeDataInSession(data.collection);
+        // store collection data into localstorage
+        storeDataLocally(data.collection);
 
         data.collection.forEach(course => {
             const anchor = document.createElement('a');
@@ -88,7 +88,7 @@ async function fetchData() {
 
             // passing data using URL
             anchor.setAttribute("href", `topicpage.html?course=${encodeURIComponent(course.name)}`);
-
+            
             anchor.innerHTML = `
                 <div class="image">
                     <img src="${course.courseImage}" alt="${course.altCourseImage}">
