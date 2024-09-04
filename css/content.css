@@ -97,10 +97,11 @@ main{
 @media (max-width: 768px) {
     .courses-section .card-grid .card {
         flex-direction: column;
+        width: 80%;
     }
 
     .courses-section .card-grid .card .image-container {
-        /* flex: 0 0 auto; */
+        flex: 0 0 auto;
         width: 100%;
     }
 

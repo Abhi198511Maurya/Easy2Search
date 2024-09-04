@@ -47,11 +47,18 @@
     <script src="js/courses.js"></script>
 
     <script>
-        function getDataFromLocalStorage() {
-            const storedData = localStorage.getItem('collectionData');
+        // Function to get data from session storage
+        function getDataFromSessionStorage() {
+            const storedData = sessionStorage.getItem('collectionData');
             return storedData ? JSON.parse(storedData) : null;
         }
 
+        // Function to store resources in session storage
+        function storeResources(resources) {
+            sessionStorage.setItem('selectedResources', JSON.stringify(resources));
+        }
+
+        // Function to create a box
         function createBox(title, topicImage, altTopicImage, resources) {
             const div = document.createElement('div');
             div.classList.add('card');
@@ -75,14 +82,11 @@
             });
         }
 
-        function storeResources(resources) {
-            localStorage.setItem('selectedResources', JSON.stringify(resources));
-        }
-
+        // Get the course from the session storage and handle it
         const urlParams = new URLSearchParams(window.location.search);
         const topics = decodeURIComponent(urlParams.get('course'));
 
-        const collection = getDataFromLocalStorage();
+        const collection = getDataFromSessionStorage();
 
         if (collection && topics) {
             const course = collection.find(item => item.name === topics);
@@ -97,6 +101,7 @@
         } else {
             console.log('No course data found.');
         }
+
 
 
     </script>

@@ -62,8 +62,9 @@
             document.querySelector('.card-grid').appendChild(div);
         }
 
-        function getResourcesFromLocalStorage() {
-            const resources = localStorage.getItem('selectedResources');
+        // Function to get resources from session storage
+        function getResourcesFromSessionStorage() {
+            const resources = sessionStorage.getItem('selectedResources');
             return resources ? JSON.parse(resources) : [];
         }
 
@@ -71,8 +72,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const topicName = decodeURIComponent(urlParams.get('topic'));
 
-        // Retrieve the resources stored in localStorage
-        const resources = getResourcesFromLocalStorage();
+        // Retrieve the resources stored in sessionStorage
+        const resources = getResourcesFromSessionStorage();
 
         // Display resources if they exist
         if (resources.length > 0) {
@@ -83,6 +84,7 @@
         } else {
             console.log('No resources found or data was not stored correctly.');
         }
+
 
     </script>
 </body>
