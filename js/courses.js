@@ -29,30 +29,33 @@ function showMoreCards() {
         card.style.display = index < cardsToShow ? 'block' : 'none';
     });
 
-    showMoreBtn.addEventListener('click', () => {
-        cards.forEach((card, index) => {
-            if (index >= cardsShown && index < cardsShown + cardsToShow) {
-                card.style.display = 'block';
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            cards.forEach((card, index) => {
+                if (index >= cardsShown && index < cardsShown + cardsToShow) {
+                    card.style.display = 'block';
+                }
+            });
+
+            if (cardsShown >= cards.length) {
+                showMoreBtn.style.display = 'none';
+                showLessBtn.style.display = 'block';
             }
+
+            cardsShown += cardsToShow;
         });
+    }
+    if (showLessBtn) {
+        showLessBtn.addEventListener('click', () => {
+            cards.forEach((card, index) => {
+                card.style.display = index < cardsToShow ? 'block' : 'none';
+            });
 
-        if (cardsShown >= cards.length) {
-            showMoreBtn.style.display = 'none';
-            showLessBtn.style.display = 'block';
-        }
-
-        cardsShown += cardsToShow;
-    });
-
-    showLessBtn.addEventListener('click', () => {
-        cards.forEach((card, index) => {
-            card.style.display = index < cardsToShow ? 'block' : 'none';
+            cardsShown = cardsToShow;
+            showLessBtn.style.display = 'none';
+            showMoreBtn.style.display = 'block';
         });
-
-        cardsShown = cardsToShow;
-        showLessBtn.style.display = 'none';
-        showMoreBtn.style.display = 'block';
-    });
+    }
 }
 
 
@@ -97,8 +100,10 @@ async function fetchData() {
                     <h4>${course.name}</h4>
                     <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
                 </div>`;
+            if (document.querySelector(".resource-cards")) {
 
-            document.querySelector(".resource-cards").appendChild(anchor);
+                document.querySelector(".resource-cards").appendChild(anchor);
+            }
         });
         showMoreCards();
         attachFilterEventListeners();

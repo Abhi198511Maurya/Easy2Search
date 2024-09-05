@@ -227,7 +227,7 @@ const navLinks = document.querySelectorAll('.navbar-links li a');
 
 navLinks.forEach(link => {
     const linkPath = new URL(link.href).pathname;
-    
+
     if (linkPath === currentPath) {
         link.classList.add('underline');
     } else {
@@ -235,8 +235,8 @@ navLinks.forEach(link => {
     }
     if (currentPath === '/') {
         navLinks[0].classList.add('underline');
-    } 
-    
+    }
+
 });
 
 // navLinks[0].classList.add('underline');
@@ -282,24 +282,28 @@ function showSlides() {
     if (slideIndex < 0) { slideIndex = slides.length - 1; }
 
     // Update background image with transition
-    hero.style.backgroundImage = `url('${slides[slideIndex].image}')`;
+    if (hero) {
+        hero.style.backgroundImage = `url('${slides[slideIndex].image}')`;
+    }
 
     // Hide content while transitioning
-    heroContent.classList.remove('show');
-
-    setTimeout(() => {
+    if (heroContent) {
+        heroContent.classList.remove('show');
+        
+        setTimeout(() => {
         heroContent.innerHTML = `
             <h1>${slides[slideIndex].title}</h1>
             <p>${slides[slideIndex].description}</p>
             <div class="cta-buttons">
-                <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
-                <a href="#" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
+            <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
+            <a href="#" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
             </div>
-        `;
-
-        // Show content after the background transition
-        heroContent.classList.add('show');
-    }, 500);
+            `;
+            
+            // Show content after the background transition
+            heroContent.classList.add('show');
+        }, 500);
+    }
 }
 
 // Automatic Slideshow
