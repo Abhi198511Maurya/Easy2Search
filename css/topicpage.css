@@ -78,6 +78,9 @@ main{
 
 .courses-section .card-grid .card .content .btn {
     background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 15px;
     color: var(--text-color);
     border: none;
     padding: 10px 20px;

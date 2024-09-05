@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos Page</title>
+    <title>Resources - Easy To Search</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -51,19 +52,20 @@
             const div = document.createElement('div');
             div.classList.add('card');
             div.innerHTML = `
-        <div class="image-container">
-            <img src="${image}" alt="${altResourceImage}" class="course-img">
-        </div>
-        <div class="content">
-            <h2 class="title">${title}</h2>
-            <p class="description">${description}</p>
-            <a href="${link}" class="btn" target="_blank">Learn More</a>
-        </div>`;
+                    <div class="image-container">
+                        <img src="${image}" alt="${altResourceImage}" class="course-img">
+                    </div>
+                    <div class="content">
+                        <h2 class="title">${title}</h2>
+                        <p class="description">${description}</p>
+                        <a href="${link}" class="btn" target="_blank">Start Now</a>
+                    </div>`;
             document.querySelector('.card-grid').appendChild(div);
         }
 
-        function getResourcesFromLocalStorage() {
-            const resources = localStorage.getItem('selectedResources');
+        // Function to get resources from session storage
+        function getResourcesFromSessionStorage() {
+            const resources = sessionStorage.getItem('selectedResources');
             return resources ? JSON.parse(resources) : [];
         }
 
@@ -71,8 +73,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const topicName = decodeURIComponent(urlParams.get('topic'));
 
-        // Retrieve the resources stored in localStorage
-        const resources = getResourcesFromLocalStorage();
+        // Retrieve the resources stored in sessionStorage
+        const resources = getResourcesFromSessionStorage();
 
         // Display resources if they exist
         if (resources.length > 0) {
@@ -83,6 +85,7 @@
         } else {
             console.log('No resources found or data was not stored correctly.');
         }
+
 
     </script>
 </body>

@@ -8,7 +8,7 @@ nav.innerHTML = `<div class="navbar-brand">
             <i class="fa-solid fa-bars"></i>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="index.html" href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -227,13 +227,19 @@ const navLinks = document.querySelectorAll('.navbar-links li a');
 
 navLinks.forEach(link => {
     const linkPath = new URL(link.href).pathname;
-
+    
     if (linkPath === currentPath) {
         link.classList.add('underline');
     } else {
         link.classList.remove('underline');
     }
+    if (currentPath === '/') {
+        navLinks[0].classList.add('underline');
+    } 
+    
 });
+
+// navLinks[0].classList.add('underline');
 
 // ---------------------------------- SLIDER IN HERO SECTION --------------------------------------- //
 let slideIndex = 0;
