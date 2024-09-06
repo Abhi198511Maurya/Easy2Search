@@ -12,6 +12,7 @@ nav.innerHTML = `<div class="navbar-brand">
             <li><a href="courses.html">Courses</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="signup-btn">Sign Up</li>
             <li class="login-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i>login</li>
         </ul>`;
 
@@ -58,17 +59,98 @@ document.querySelector('.popup-outer').innerHTML = `<div id="loginModal" class="
             </div>
         </div>`;
 
+
+
+// ---------------------------------- ADD FOOTER USING JS --------------------------------------- //
+const footer = document.createElement('footer');
+footer.classList.add('footer-section');
+footer.innerHTML = `<div class="footer-container">
+            <div class="footer-row">
+            <!-- Company Info -->
+                <div class="footer-col">
+                    <h3>Easy To Search</h3>
+                    <p>Your go-to platform for finding the best online courses and educational tools. Discover top
+                    resources and begin your learning journey now.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a class="login-btn">Login</a></li>
+                        </ul>
+                </div>
+                <!-- Social Media Links -->
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i> linkedin</a></li>
+                    </div>
+                </div>
+                <!-- Newsletter Subscription -->
+                <div class="footer-col">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                        </form>
+                        <p id="newsletter-response"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Easy To Search. All rights reserved.</p>
+        </div>`;
+
+document.querySelector('body').insertAdjacentElement('beforeend', footer);
+
+// ---------------------------------- FOOTER SUBSCRIPTION SECTION  --------------------------------------- //
+document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('newsletter-email').value.trim();
+    const responseMessage = document.getElementById('newsletter-response');
+
+    if (email.length === 0) {
+        responseMessage.textContent = 'Please enter your email.';
+        responseMessage.style.color = 'red';
+        return;
+    }
+
+    // Simulate subscription process
+    setTimeout(() => {
+        responseMessage.textContent = 'Thank you for subscribing!';
+        responseMessage.style.color = 'green';
+        document.getElementById('newsletter-form').reset();
+    }, 1000);
+});
 // --------------------------------  TO SHOW THE LOGIN POPUP USING JS ----------------------------------- //
-const loginBtn = document.querySelector('.navbar ul .login-btn');
+const loginBtns = document.querySelectorAll('.login-btn');
+const signupBtns = document.querySelectorAll('.signup-btn');
 const loginModal = document.getElementById('loginModal');
 const signupModal = document.getElementById('signupModal');
 const closeBtns = document.querySelector(".close");
 
+loginBtns.forEach(loginBtn => {
+    loginBtn.addEventListener('click', () => {
+        loginModal.style.opacity = '1';
+        loginModal.style.zIndex = '5';
+        loginModal.style.transform = 'scale(100%)';
+    });
+});
 
-loginBtn.addEventListener('click', () => {
-    loginModal.style.opacity = '1';
-    loginModal.style.zIndex = '5';
-    loginModal.style.transform = 'scale(100%)';
+signupBtns.forEach(signupBtn => {
+    signupBtn.addEventListener('click', () => {
+        signupModal.style.opacity = '1';
+        signupModal.style.zIndex = '5';
+        signupModal.style.transform = 'scale(100%)';
+    });
 });
 
 // Switch between login and signup
@@ -112,77 +194,6 @@ window.onclick = function (event) {
         signupModal.style.transform = 'scale(50%)';
     }
 };
-
-
-// ---------------------------------- ADD FOOTER USING JS --------------------------------------- //
-const footer = document.createElement('footer');
-footer.classList.add('footer-section');
-footer.innerHTML = `<div class="footer-container">
-            <div class="footer-row">
-                <!-- Company Info -->
-                <div class="footer-col">
-                    <h3>Easy To Search</h3>
-                    <p>Your go-to platform for finding the best online courses and educational tools. Discover top
-                        resources and begin your learning journey now.</p>
-                </div>
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Login</a></li>
-                    </ul>
-                </div>
-                <!-- Social Media Links -->
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i> facebook</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i> twitter</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> instagram</a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i> linkedin</a></li>
-                    </div>
-                </div>
-                <!-- Newsletter Subscription -->
-                <div class="footer-col">
-                    <h4>Subscribe to Our Newsletter</h4>
-                    <form id="newsletter-form" class="newsletter-form">
-                        <input type="email" id="newsletter-email" placeholder="Enter your email">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <p id="newsletter-response"></p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Easy To Search. All rights reserved.</p>
-        </div>`;
-
-document.querySelector('body').insertAdjacentElement('beforeend', footer);
-
-// ---------------------------------- FOOTER SUBSCRIPTION SECTION  --------------------------------------- //
-document.getElementById('newsletter-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById('newsletter-email').value.trim();
-    const responseMessage = document.getElementById('newsletter-response');
-
-    if (email.length === 0) {
-        responseMessage.textContent = 'Please enter your email.';
-        responseMessage.style.color = 'red';
-        return;
-    }
-
-    // Simulate subscription process
-    setTimeout(() => {
-        responseMessage.textContent = 'Thank you for subscribing!';
-        responseMessage.style.color = 'green';
-        document.getElementById('newsletter-form').reset();
-    }, 1000);
-});
 
 // ---------------------------------- ADD CLASS SCROLLED ON SCROLL USING JS --------------------------------------- //
 window.addEventListener('scroll', function () {
@@ -289,22 +300,31 @@ function showSlides() {
     // Hide content while transitioning
     if (heroContent) {
         heroContent.classList.remove('show');
-        
+
         setTimeout(() => {
-        heroContent.innerHTML = `
+            heroContent.innerHTML = `
             <h1>${slides[slideIndex].title}</h1>
             <p>${slides[slideIndex].description}</p>
             <div class="cta-buttons">
             <a href="about.html" class="btn-primary">${slides[slideIndex].ctaPrimary}</a>
-            <a href="#" class="btn-secondary">${slides[slideIndex].ctaSecondary}</a>
+            <a class="btn-secondary signup-btn">${slides[slideIndex].ctaSecondary}</a>
             </div>
             `;
-            
+
             // Show content after the background transition
             heroContent.classList.add('show');
         }, 500);
     }
 }
+document.querySelector('.hero-content').addEventListener('click', function (event) {
+    // Check if the clicked element is the signup button
+    if (event.target.classList.contains('signup-btn')) {
+        signupModal.style.opacity = '1';
+        signupModal.style.zIndex = '5';
+        signupModal.style.transform = 'scale(100%)';
+    }
+});
+
 
 // Automatic Slideshow
 setInterval(() => {
