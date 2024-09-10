@@ -414,11 +414,15 @@ main {
 .header-section {
     background: rgba(24, 29, 56, 0.6);
     width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .header-section-content {
     max-width: 55rem;
-    margin: 12rem 0 2rem 10%;
+    margin-left: 12%;
+    margin-top: 5rem;
     padding: 0 1rem;
     font-size: 2rem;
 }
